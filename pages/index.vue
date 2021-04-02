@@ -7,11 +7,23 @@
         <nuxt-link to="/contact" class="btn">Enquire</nuxt-link>
       </div>
     </div>
+    <v-card class="breeds__container" elevation="8">
+      <div class="cards__container">
+        <div v-for="i in 4" :key="i" class="wrapper">
+          <Breeds />
+        </div>
+      </div>
+    </v-card>
   </div>
 </template>
 
 <script>
-export default {}
+import Breeds from '@/components/Breeds'
+export default {
+  components: {
+    Breeds,
+  },
+}
 </script>
 <style lang="css" scoped>
 .bg__wrappper {
@@ -55,5 +67,37 @@ export default {}
 .btn:focus {
   outline: none;
   border: none;
+}
+.breeds__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  padding: 1rem;
+}
+.cards__container {
+  margin: 0 auto;
+  display: grid;
+  gap: 32px;
+  padding: 1rem;
+  grid-template-columns: repeat(4, 300px);
+}
+
+@media only screen and (max-width: 1200px) {
+  .cards__container {
+    grid-template-columns: repeat(2, 280px);
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .cards__container {
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: 1fr 1fr;
+    padding: 0.5rem;
+  }
+  .breeds__container {
+    margin: 0.8rem;
+    padding: 0.5rem;
+  }
 }
 </style>

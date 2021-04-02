@@ -203,6 +203,15 @@ export default {
     show: {},
     shows: true,
   }),
+  mounted() {
+    if (screen.width <= 768) {
+      this.dynoWidth = 380
+
+      if (screen.width <= 400) {
+        this.dynoWidth = 340
+      }
+    }
+  },
   methods: {
     // eslint-disable-next-line object-shorthand
     toggleShow: function (idx) {
@@ -214,15 +223,6 @@ export default {
         this.show.idx = true
       }
     },
-  },
-  mounted() {
-    if (screen.width <= 768) {
-      this.dynoWidth = 380
-
-      if (screen.width <= 400) {
-        this.dynoWidth = 340
-      }
-    }
   },
 }
 </script>
