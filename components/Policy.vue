@@ -63,7 +63,7 @@ export default {}
   margin-top: 2rem;
 }
 .inner__container {
-  padding: 2rem;
+  padding: 1rem;
   text-align: justify;
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 600;
@@ -74,8 +74,9 @@ export default {}
 }
 .unordered__list {
   line-height: 2.5;
-  padding: 0 2rem;
+  padding: 0 1rem;
   font-size: 1.1rem;
+  margin-top: 1rem;
 }
 .heading {
   text-align: center;
