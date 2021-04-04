@@ -35,10 +35,12 @@
         "approxGoatNo": "Approx. Goat No.",
         "approxYearIncome": "Approx. Annual Income",
         "selfInvestValue": "Beyond 2 Lakhs",
-        "bankLoanValue": "3 times the debt self investment",
+        "bankLoanValue": "3 * debt self investment",
         "repayValue": "5 Years",
         "approxGoatNoValue": "20 * 1 Male Goat",
-        "approxYearIncomeValue": "Per capital for goat purchases"
+        "approxYearIncomeValue": "PC goat purchases",
+        "tooltipText1": "3 times the debt self investment",
+        "tooltipText2": "Per capita for the goat purchases"
       }
     ],
 

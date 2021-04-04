@@ -64,7 +64,6 @@
 export default {
   computed: {
     themeCheck() {
-      console.log(this.$route.path)
       if (this.$route.path === '/') {
         return 'light'
       }

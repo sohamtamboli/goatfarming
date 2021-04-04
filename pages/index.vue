@@ -14,14 +14,19 @@
         </div>
       </div>
     </v-card>
+    <v-container>
+      <PlanCard />
+    </v-container>
   </div>
 </template>
 
 <script>
 import Breeds from '@/components/Breeds'
+import PlanCard from '@/components/PlanCard'
 export default {
   components: {
     Breeds,
+    PlanCard,
   },
 }
 </script>
