@@ -1,26 +1,90 @@
 <template>
-  <div>
-    <div class="nav__container">
-      <div class="left__menu">
-        <nuxt-link class="menu__links" to="/about">About</nuxt-link>
-        <nuxt-link class="menu__links" to="#">Breeds</nuxt-link>
-        <nuxt-link class="menu__links" to="#">Plans</nuxt-link>
+  <v-app>
+    <v-main>
+      <div v-if="isDesktop" class="nav__container" :class="themeCheck">
+        <div class="left__menu">
+          <nuxt-link class="menu__links" :class="themeCheck" to="/about"
+            >About</nuxt-link
+          >
+          <nuxt-link class="menu__links" :class="themeCheck" to="#"
+            >Breeds</nuxt-link
+          >
+          <nuxt-link class="menu__links" :class="themeCheck" to="#"
+            >Plans</nuxt-link
+          >
+        </div>
+        <div class="logo__container">
+          <nuxt-link to="/">
+            <img src="/v.png" alt="" class="logo" />
+          </nuxt-link>
+        </div>
+        <div class="right__menu">
+          <nuxt-link class="menu__links" :class="themeCheck" to="/contact"
+            >Contact Us</nuxt-link
+          >
+        </div>
       </div>
-      <div class="logo__container">
-        <nuxt-link to="/">
-          <img src="/v.png" alt="" class="logo" />
-        </nuxt-link>
-      </div>
-      <div class="right__menu">
-        <nuxt-link class="menu__links" to="/contact">Contact Us</nuxt-link>
-      </div>
-    </div>
-    <nuxt />
-  </div>
+      <nuxt />
+    </v-main>
+    <v-bottom-navigation
+      v-if="!isDesktop"
+      fixed
+      color="white"
+      hide-on-scroll
+      horizontal
+      app
+    >
+      <v-btn>
+        <span>About</span>
+
+        <v-icon>mdi-history</v-icon>
+      </v-btn>
+
+      <v-btn>
+        <span>Breeds</span>
+
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+
+      <v-btn>
+        <span>Plans</span>
+
+        <v-icon>mdi-map-marker</v-icon>
+      </v-btn>
+      <v-btn>
+        <span>Contact Us </span>
+
+        <v-icon>mdi-map-marker</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
+  </v-app>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    themeCheck() {
+      console.log(this.$route.path)
+      if (this.$route.path === '/') {
+        return 'light'
+      }
+      return 'dark'
+    },
+    isDesktop() {
+      if (process.browser) {
+        if (
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          )
+        ) {
+          return false
+        }
+        return true
+      }
+      return false
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -38,10 +102,8 @@ export default {}
   height: 80px;
   padding: 1rem 2rem;
   margin: 0 auto;
-  color: #fff;
 }
 .menu__links {
-  color: #fff;
   text-decoration: none;
 }
 .left__menu > .menu__links:not(:last-child) {
@@ -58,5 +120,11 @@ export default {}
 .right__menu {
   grid-area: rightm;
   place-self: center;
+}
+.dark {
+  color: #000;
+}
+.light {
+  color: #fff;
 }
 </style>
