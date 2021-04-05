@@ -1,29 +1,39 @@
 <template>
-  <div>
-    <div id="banner" class="bg__wrappper">
-      <div class="content__wrapper">
-        <nuxt-link to="/contact" class="btn">Enquire</nuxt-link>
+  <div class="app-wrapper">
+    <section>
+      <div id="banner" class="bg__wrappper">
+        <div class="content__wrapper">
+          <nuxt-link to="/contact" class="btn">Enquire</nuxt-link>
+        </div>
       </div>
-    </div>
-    <v-container>
-      <h1>Importance</h1>
-      <Importance />
-    </v-container>
-    <div class="carousel__wrapper">
+    </section>
+    <section>
       <v-container>
-        <!-- <v-card id="breeds" flat class="breeds__container">
+        <Heading title="Importance" />
+        <Importance />
+      </v-container>
+    </section>
+    <section id="breeds">
+      <div class="carousel__wrapper">
+        <v-container>
+          <Heading title="Breeds" />
+          <!-- <v-card id="breeds" flat class="breeds__container">
         <div class="cards__container">
           <div v-for="i in goatData.data" :key="i.title" class="wrapper">
             <Breeds :goat="i" />
           </div>
         </div>
       </v-card> -->
-        <Breeds />
+          <Breeds />
+        </v-container>
+      </div>
+    </section>
+    <section>
+      <v-container id="plans">
+        <Heading title="Plans" />
+        <PlanCard />
       </v-container>
-    </div>
-    <v-container id="plans">
-      <PlanCard />
-    </v-container>
+    </section>
   </div>
 </template>
 
@@ -31,11 +41,13 @@
 import Breeds from '@/components/Breeds'
 import PlanCard from '@/components/PlanCard'
 import Importance from '@/components/Importance'
+import Heading from '@/components/Heading'
 export default {
   components: {
     Breeds,
     PlanCard,
     Importance,
+    Heading,
   },
 }
 </script>
@@ -81,6 +93,9 @@ export default {
 }
 .btn:hover {
   background: #ff7a00;
+}
+.app-wrapper {
+  background: #dfe0dc;
 }
 .btn:focus {
   outline: none;
