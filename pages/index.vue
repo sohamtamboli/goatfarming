@@ -1,20 +1,20 @@
 <template>
   <div>
-    <div class="bg__wrappper">
+    <div id="banner" class="bg__wrappper">
       <div class="content__wrapper">
         <h1 class="title">Goat Farm</h1>
         <h3 class="subtitle">sub headline</h3>
         <nuxt-link to="/contact" class="btn">Enquire</nuxt-link>
       </div>
     </div>
-    <v-card class="breeds__container" elevation="8">
+    <v-card id="breeds" class="breeds__container" elevation="8">
       <div class="cards__container">
         <div v-for="i in 4" :key="i" class="wrapper">
           <Breeds />
         </div>
       </div>
     </v-card>
-    <v-container>
+    <v-container id="plans">
       <PlanCard />
     </v-container>
   </div>

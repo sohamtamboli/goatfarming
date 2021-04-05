@@ -1,11 +1,15 @@
 <template>
   <v-app>
-    <v-app-bar app dark hide-on-scroll fixed>
+    <v-app-bar v-show="isDesktop" app dark hide-on-scroll fixed>
       <v-spacer></v-spacer>
 
       <nuxt-link class="menu__links" to="/about">About</nuxt-link>
-      <nuxt-link class="menu__links" to="#">Breeds</nuxt-link>
-      <nuxt-link class="menu__links" to="#">Plans</nuxt-link>
+      <nuxt-link class="menu__links" :to="{ path: '/', hash: '#breeds' }"
+        >Breeds</nuxt-link
+      >
+      <nuxt-link class="menu__links" :to="{ path: '/', hash: '#plans' }"
+        >Plans</nuxt-link
+      >
     </v-app-bar>
     <v-main id="#app">
       <!-- <div v-if="isDesktop" class="nav__container" :class="themeCheck">
@@ -65,6 +69,11 @@
         <v-icon>mdi-map-marker</v-icon>
       </v-btn>
     </v-bottom-navigation>
+    <v-footer app absolute>
+      <v-col class="text-center" cols="12">
+        {{ new Date().getFullYear() }} — <strong>Recce</strong>
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
@@ -84,10 +93,13 @@ export default {
             navigator.userAgent
           )
         ) {
+          debugger
           return false
         }
+        debugger
         return true
       }
+      debugger
       return false
     },
   },
@@ -135,5 +147,8 @@ export default {
 }
 .light {
   color: #fff;
+}
+.nuxt-link-exact-active {
+  color: orange;
 }
 </style>
