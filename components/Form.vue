@@ -107,52 +107,70 @@ export default {
 
   computed: {
     nameErrors() {
-      const errors = []
-      if (!this.$v.payload.name.$dirty) return errors
-      !this.$v.payload.name.maxLength &&
-        errors.push('Name must be at most 60 characters long')
-      !this.$v.payload.name.required && errors.push('Name is required.')
-      return errors
+      if (process.browser) {
+        const errors = []
+        if (!this.$v.payload.name.$dirty) return errors
+        !this.$v.payload.name.maxLength &&
+          errors.push('Name must be at most 60 characters long')
+        !this.$v.payload.name.required && errors.push('Name is required.')
+        return errors
+      }
+      return null
     },
     mobileErrors() {
-      const errors = []
-      if (!this.$v.payload.mobile.$dirty) return errors
-      !this.$v.payload.mobile.numeric &&
-        errors.push('Mobile number must be digits')
-      !this.$v.payload.mobile.maxLength &&
-        errors.push('Mobile number must be 10 digits long')
-      !this.$v.payload.mobile.required &&
-        errors.push('Mobile number is required.')
-      return errors
+      if (process.browser) {
+        const errors = []
+        if (!this.$v.payload.mobile.$dirty) return errors
+        !this.$v.payload.mobile.numeric &&
+          errors.push('Mobile number must be digits')
+        !this.$v.payload.mobile.maxLength &&
+          errors.push('Mobile number must be 10 digits long')
+        !this.$v.payload.mobile.required &&
+          errors.push('Mobile number is required.')
+        return errors
+      }
+      return null
     },
     emailErrors() {
-      const errors = []
-      if (!this.$v.payload.email.$dirty) return errors
-      !this.$v.payload.email.email && errors.push('Must be valid e-mail')
-      return errors
+      if (process.browser) {
+        const errors = []
+        if (!this.$v.payload.email.$dirty) return errors
+        !this.$v.payload.email.email && errors.push('Must be valid e-mail')
+        return errors
+      }
+      return null
     },
     addressLineOneErrors() {
-      const errors = []
-      if (!this.$v.payload.addressLineOne.$dirty) return errors
-      !this.$v.payload.addressLineOne.required &&
-        errors.push('Address is required.')
-      return errors
+      if (process.browser) {
+        const errors = []
+        if (!this.$v.payload.addressLineOne.$dirty) return errors
+        !this.$v.payload.addressLineOne.required &&
+          errors.push('Address is required.')
+        return errors
+      }
+      return null
     },
     cityNameErrors() {
-      const errors = []
-      if (!this.$v.payload.cityName.$dirty) return errors
-      !this.$v.payload.cityName.maxLength &&
-        errors.push('City name must be at most 30 characters long')
-      !this.$v.payload.cityName.required &&
-        errors.push('City name is required.')
-      return errors
+      if (process.browser) {
+        const errors = []
+        if (!this.$v.payload.cityName.$dirty) return errors
+        !this.$v.payload.cityName.maxLength &&
+          errors.push('City name must be at most 30 characters long')
+        !this.$v.payload.cityName.required &&
+          errors.push('City name is required.')
+        return errors
+      }
+      return null
     },
     stateNameErrors() {
-      const errors = []
-      if (!this.$v.payload.stateName.$dirty) return errors
-      !this.$v.payload.stateName.required &&
-        errors.push('State name is required.')
-      return errors
+      if (process.browser) {
+        const errors = []
+        if (!this.$v.payload.stateName.$dirty) return errors
+        !this.$v.payload.stateName.required &&
+          errors.push('State name is required.')
+        return errors
+      }
+      return null
     },
   },
   mounted() {
