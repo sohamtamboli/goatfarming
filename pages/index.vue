@@ -9,13 +9,18 @@
       <h1>Importance</h1>
       <Importance />
     </v-container>
-    <v-card id="breeds" class="breeds__container" elevation="8">
-      <div class="cards__container">
-        <div v-for="i in goatData.data" :key="i.title" class="wrapper">
-          <Breeds :goat="i" />
+    <div class="carousel__wrapper">
+      <v-container>
+        <!-- <v-card id="breeds" flat class="breeds__container">
+        <div class="cards__container">
+          <div v-for="i in goatData.data" :key="i.title" class="wrapper">
+            <Breeds :goat="i" />
+          </div>
         </div>
-      </div>
-    </v-card>
+      </v-card> -->
+        <Breeds />
+      </v-container>
+    </div>
     <v-container id="plans">
       <PlanCard />
     </v-container>
@@ -26,19 +31,19 @@
 import Breeds from '@/components/Breeds'
 import PlanCard from '@/components/PlanCard'
 import Importance from '@/components/Importance'
-import goatBreedData from '@/assets/data/breeds.json'
 export default {
   components: {
     Breeds,
     PlanCard,
     Importance,
   },
-  data: () => ({
-    goatData: goatBreedData,
-  }),
 }
 </script>
 <style lang="css" scoped>
+.carousel__wrapper {
+  background: #000;
+  padding: 3rem 0;
+}
 .bg__wrappper {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url('@/static/banner.png');
@@ -63,9 +68,9 @@ export default {
   margin-bottom: 1rem;
 }
 .btn {
-  font-size: 0.5em;
+  font-size: 2rem;
   padding: 1rem 2rem;
-  background: #4a2400;
+  background: #e77b15;
   border-radius: 30px;
   outline: none;
   border: none;

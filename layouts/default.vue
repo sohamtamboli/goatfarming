@@ -43,7 +43,6 @@
           >
         </div>
       </div> -->
-
       <nuxt />
     </v-main>
     <v-bottom-navigation
