@@ -8,3 +8,13 @@ html {
 .v-expansion-panel-content__wrap {
   padding: 0 !important;
 }
+
+.v-toolbar--prominent .v-toolbar__content {
+  align-items: center !important;
+}
+
+.v-toolbar__content {
+  height: 128px !important;
+  width: 100% !important;
+  display: grid !important;
+}

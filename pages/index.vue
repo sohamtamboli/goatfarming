@@ -5,6 +5,10 @@
         <nuxt-link to="/contact" class="btn">Enquire</nuxt-link>
       </div>
     </div>
+    <v-container>
+      <h1>Importance</h1>
+      <Importance />
+    </v-container>
     <v-card id="breeds" class="breeds__container" elevation="8">
       <div class="cards__container">
         <div v-for="i in goatData.data" :key="i.title" class="wrapper">
@@ -21,15 +25,17 @@
 <script>
 import Breeds from '@/components/Breeds'
 import PlanCard from '@/components/PlanCard'
+import Importance from '@/components/Importance'
 import goatBreedData from '@/assets/data/breeds.json'
 export default {
-  data: () => ({
-    goatData: goatBreedData,
-  }),
   components: {
     Breeds,
     PlanCard,
+    Importance,
   },
+  data: () => ({
+    goatData: goatBreedData,
+  }),
 }
 </script>
 <style lang="css" scoped>

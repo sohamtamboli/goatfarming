@@ -3,6 +3,7 @@
     "planDetails": [
       {
         "name": "Anjali Plan – 1",
+        "img": "/card1.webp",
         "selfInvest": "Self Investment",
         "bankLoan": "Bank Loan",
         "repay": "Repayment Term",
@@ -16,6 +17,7 @@
       },
       {
         "name": "Anjali Plan - 2",
+        "img": "/card2.webp",
         "selfInvest": "Self Investment",
         "bankLoan": "Bank Loan",
         "repay": "Repayment Term",
@@ -29,6 +31,7 @@
       },
       {
         "name": "Anjali Plan – 3",
+        "img": "/card3.webp",
         "selfInvest": "Self Investment",
         "bankLoan": "Loan",
         "repay": "Loan Term",

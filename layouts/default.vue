@@ -1,18 +1,23 @@
 <template>
   <v-app>
-    <v-app-bar v-show="isDesktop" prominent app dark hide-on-scroll fixed>
-      <nuxt-link to="/"
-        ><v-img src="/navlogo.png" max-height="95" max-width="250" contain
-      /></nuxt-link>
-      <v-spacer></v-spacer>
-
-      <nuxt-link class="menu__links" to="/about">About</nuxt-link>
-      <nuxt-link class="menu__links" :to="{ path: '/', hash: '#breeds' }"
-        >Breeds</nuxt-link
-      >
-      <nuxt-link class="menu__links" :to="{ path: '/', hash: '#plans' }"
-        >Plans</nuxt-link
-      >
+    <v-app-bar v-show="isDesktop" prominent app hide-on-scroll fixed>
+      <div class="navbar">
+        <div class="logo__container">
+          <nuxt-link to="/"
+            ><v-img src="/navlogo.png" max-height="80" max-width="210" contain
+          /></nuxt-link>
+        </div>
+        <!-- <v-spacer></v-spacer> -->
+        <div class="right__menu">
+          <nuxt-link class="menu__links" to="/about">About</nuxt-link>
+          <nuxt-link class="menu__links" :to="{ path: '/', hash: '#breeds' }"
+            >Breeds</nuxt-link
+          >
+          <nuxt-link class="menu__links" :to="{ path: '/', hash: '#plans' }"
+            >Plans</nuxt-link
+          >
+        </div>
+      </div>
     </v-app-bar>
     <v-main id="#app">
       <!-- <div v-if="isDesktop" class="nav__container" :class="themeCheck">
@@ -51,25 +56,17 @@
     >
       <v-btn>
         <span>About</span>
-
-        <v-icon>mdi-history</v-icon>
       </v-btn>
 
       <v-btn>
         <span>Breeds</span>
-
-        <v-icon>mdi-heart</v-icon>
       </v-btn>
 
       <v-btn>
         <span>Plans</span>
-
-        <v-icon>mdi-map-marker</v-icon>
       </v-btn>
       <v-btn>
         <span>Contact Us </span>
-
-        <v-icon>mdi-map-marker</v-icon>
       </v-btn>
     </v-bottom-navigation>
     <v-footer app absolute>
@@ -112,21 +109,26 @@ export default {
 .logo {
   height: 60px;
 }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .nav__container {
   /* display: flex;
   justify-content: space-around;
   align-items: center; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 'leftm lg rightm';
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'lg rightm';
   height: 80px;
   padding: 1rem 2rem;
   margin: 0 auto;
 }
 .menu__links {
   text-decoration: none;
-  color: white;
+  color: #000;
   padding: 2rem 3rem;
 }
 .left__menu > .menu__links:not(:last-child) {

@@ -3,10 +3,7 @@
   <div class="plan__cards__container">
     <div v-for="(plan, idx) in planData" :key="idx" class="card__wrapper">
       <v-card class="mx-auto" :max-width="dynoWidth">
-        <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-          height="200px"
-        ></v-img>
+        <v-img :src="plan.img" height="200px"></v-img>
 
         <v-card-title>
           <span>{{ plan.name }}</span>
