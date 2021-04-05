@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar prominent v-show="isDesktop" app dark hide-on-scroll fixed>
+    <v-app-bar v-show="isDesktop" prominent app dark hide-on-scroll fixed>
       <nuxt-link to="/"
         ><v-img src="/navlogo.png" max-height="95" max-width="250" contain
       /></nuxt-link>
@@ -96,13 +96,12 @@ export default {
             navigator.userAgent
           )
         ) {
-          debugger
           return false
         }
-        debugger
+
         return true
       }
-      debugger
+
       return false
     },
   },
