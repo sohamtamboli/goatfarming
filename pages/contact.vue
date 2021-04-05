@@ -1,11 +1,24 @@
 <template>
-  <div>
-    <h1>Contact Page</h1>
-  </div>
+  <v-container class="contact__grid__container">
+    <h1 class="text-center mt-4 mb-6">Contact Us</h1>
+    <Form />
+  </v-container>
 </template>
 
 <script>
-export default {}
+import Form from '@/components/Form'
+export default {
+  components: {
+    Form,
+  },
+}
 </script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+.contact__grid__container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin-bottom: 5rem;
+}
+</style>
