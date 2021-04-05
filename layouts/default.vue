@@ -1,7 +1,14 @@
 <template>
   <v-app>
-    <v-main>
-      <div v-if="isDesktop" class="nav__container" :class="themeCheck">
+    <v-app-bar app dark hide-on-scroll fixed>
+      <v-spacer></v-spacer>
+
+      <nuxt-link class="menu__links" to="/about">About</nuxt-link>
+      <nuxt-link class="menu__links" to="#">Breeds</nuxt-link>
+      <nuxt-link class="menu__links" to="#">Plans</nuxt-link>
+    </v-app-bar>
+    <v-main id="#app">
+      <!-- <div v-if="isDesktop" class="nav__container" :class="themeCheck">
         <div class="left__menu">
           <nuxt-link class="menu__links" :class="themeCheck" to="/about"
             >About</nuxt-link
@@ -23,7 +30,8 @@
             >Contact Us</nuxt-link
           >
         </div>
-      </div>
+      </div> -->
+
       <nuxt />
     </v-main>
     <v-bottom-navigation
@@ -104,6 +112,8 @@ export default {
 }
 .menu__links {
   text-decoration: none;
+  color: white;
+  padding: 0 3rem;
 }
 .left__menu > .menu__links:not(:last-child) {
   margin-right: 2rem;
