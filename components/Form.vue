@@ -3,7 +3,7 @@
     <div class="form__wrapper">
       <form>
         <v-text-field
-          :v-model="payload.name"
+          v-model="payload.name"
           :error-messages="nameErrors"
           label="Name"
           required
@@ -11,7 +11,7 @@
           @blur="$v.payload.name.$touch()"
         />
         <v-text-field
-          :v-model="payload.mobile"
+          v-model="payload.mobile"
           :error-messages="mobileErrors"
           :counter="10"
           label="Mobile Number"
@@ -20,26 +20,23 @@
           @blur="$v.payload.mobile.$touch()"
         />
         <v-text-field
-          :v-model="payload.email"
+          v-model="payload.email"
           :error-messages="emailErrors"
           label="E-mail"
           @input="$v.payload.email.$touch()"
           @blur="$v.payload.email.$touch()"
         />
         <v-text-field
-          :v-model="payload.addressLineOne"
+          v-model="payload.addressLineOne"
           :error-messages="addressLineOneErrors"
           label="Address Line 1"
           required
           @input="$v.payload.addressLineOne.$touch()"
           @blur="$v.payload.addressLineOne.$touch()"
         />
+        <v-text-field v-model="payload.addressLineTwo" label="Address Line 2" />
         <v-text-field
-          :v-model="payload.addressLineTwo"
-          label="Address Line 2"
-        />
-        <v-text-field
-          :v-model="payload.cityName"
+          v-model="payload.cityName"
           :error-messages="cityNameErrors"
           :counter="30"
           label="City"
@@ -48,14 +45,14 @@
           @blur="$v.payload.cityName.$touch()"
         />
         <v-text-field
-          :v-model="payload.stateName"
+          v-model="payload.stateName"
           :error-messages="stateNameErrors"
           label="State"
           required
           @input="$v.payload.stateName.$touch()"
           @blur="$v.payload.stateName.$touch()"
         />
-        <v-text-field :v-model="payload.pincode" label="Pin Code" />
+        <v-text-field v-model="payload.pincode" label="Pin Code" />
 
         <div class="mt-4">
           <v-btn class="mr-4" @click="submit"> submit </v-btn>
