@@ -1,6 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar v-show="isDesktop" app dark hide-on-scroll fixed>
+    <v-app-bar prominent v-show="isDesktop" app dark hide-on-scroll fixed>
+      <nuxt-link to="/"
+        ><v-img src="/navlogo.png" max-height="95" max-width="250" contain
+      /></nuxt-link>
       <v-spacer></v-spacer>
 
       <nuxt-link class="menu__links" to="/about">About</nuxt-link>
@@ -125,7 +128,7 @@ export default {
 .menu__links {
   text-decoration: none;
   color: white;
-  padding: 0 3rem;
+  padding: 2rem 3rem;
 }
 .left__menu > .menu__links:not(:last-child) {
   margin-right: 2rem;

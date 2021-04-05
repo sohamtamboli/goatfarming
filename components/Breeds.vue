@@ -1,14 +1,23 @@
 <template>
   <div class="container__card">
-    <div class="img__wrapper">
-      <!-- <img src="" alt="" class="img" /> -->
-    </div>
-    <h2 class="img__title">Title</h2>
+    <v-img
+      lazy-src="https://picsum.photos/id/11/10/6"
+      max-height="150"
+      max-width="250"
+      :src="goat.src"
+      contain
+    ></v-img>
+
+    <h2 class="img__title">{{ goat.title }}</h2>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    goat: { type: Object, default: () => {} },
+  },
+}
 </script>
 
 <style lang="css" scoped>

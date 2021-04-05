@@ -2,15 +2,13 @@
   <div>
     <div id="banner" class="bg__wrappper">
       <div class="content__wrapper">
-        <h1 class="title">Goat Farm</h1>
-        <h3 class="subtitle">sub headline</h3>
         <nuxt-link to="/contact" class="btn">Enquire</nuxt-link>
       </div>
     </div>
     <v-card id="breeds" class="breeds__container" elevation="8">
       <div class="cards__container">
-        <div v-for="i in 4" :key="i" class="wrapper">
-          <Breeds />
+        <div v-for="i in goatData.data" :key="i.title" class="wrapper">
+          <Breeds :goat="i" />
         </div>
       </div>
     </v-card>
@@ -23,7 +21,11 @@
 <script>
 import Breeds from '@/components/Breeds'
 import PlanCard from '@/components/PlanCard'
+import goatBreedData from '@/assets/data/breeds.json'
 export default {
+  data: () => ({
+    goatData: goatBreedData,
+  }),
   components: {
     Breeds,
     PlanCard,
@@ -33,7 +35,7 @@ export default {
 <style lang="css" scoped>
 .bg__wrappper {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('@/static/bg.jpg');
+    url('@/static/banner.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
