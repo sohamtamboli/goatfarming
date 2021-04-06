@@ -1,0 +1,81 @@
+{
+  "plans": {
+    "planDetails": [
+      {
+        "name": "Anjali Plan – 1",
+        "img": "/card1.webp",
+        "selfInvest": "Self Investment",
+        "bankLoan": "Bank Loan",
+        "repay": "Repayment Term",
+        "approxGoatNo": "Approx. Goat No.",
+        "approxYearIncome": "Approx. Annual Income",
+        "selfInvestValue": "25,000 to 50,000",
+        "bankLoanValue": "75,000 to 1,50,000",
+        "repayValue": "3 Years",
+        "approxGoatNoValue": "Group of 5 to 10",
+        "approxYearIncomeValue": "1 Lakh"
+      },
+      {
+        "name": "Anjali Plan - 2",
+        "img": "/card2.webp",
+        "selfInvest": "Self Investment",
+        "bankLoan": "Bank Loan",
+        "repay": "Repayment Term",
+        "approxGoatNo": "Approx. Goat No.",
+        "approxYearIncome": "Approx. Annual Income",
+        "selfInvestValue": "1 Lakh",
+        "bankLoanValue": "3 Lakhs",
+        "repayValue": "3 Years",
+        "approxGoatNoValue": "20 * 1 Male Goat",
+        "approxYearIncomeValue": "2 Lakhs"
+      },
+      {
+        "name": "Anjali Plan – 3",
+        "img": "/card3.webp",
+        "selfInvest": "Self Investment",
+        "bankLoan": "Loan",
+        "repay": "Loan Term",
+        "approxGoatNo": "Approx. Goat No.",
+        "approxYearIncome": "Approx. Annual Income",
+        "selfInvestValue": "Beyond 2 Lakhs",
+        "bankLoanValue": "3 * debt self investment",
+        "repayValue": "5 Years",
+        "approxGoatNoValue": "20 * 1 Male Goat",
+        "approxYearIncomeValue": "PC goat purchases",
+        "tooltipText1": "3 times the debt self investment",
+        "tooltipText2": "Per capita for the goat purchases"
+      }
+    ],
+
+    "businessPlan": [
+      {
+        "name": "Business Plan",
+        "selfInvest": "Self Investment",
+        "debt": "Debt",
+        "projectCost": "Project Cost",
+        "selfInvestValue": "25%",
+        "debtValue": "75%",
+        "projectCostValue": "100%",
+        "note": "Note: Industry based Governance as per policy"
+      }
+    ],
+
+    "expenses": [
+      {
+        "name": "Expenses",
+        "construction": "Construction",
+        "playingCapital": "Playing Capital (Annual)",
+        "buyGoat": "Buy a Goat",
+        "govTax": "Government Tax",
+        "companyFee": "Company Fee",
+        "agencyFee": "Agency Fee",
+        "constructionValue": "20%",
+        "playingCapitalValue": "20%",
+        "buyGoatValue": "50%",
+        "govTaxValue": "5%",
+        "companyFeeValue": "3%",
+        "agencyFeeValue": "3%"
+      }
+    ]
+  }
+}

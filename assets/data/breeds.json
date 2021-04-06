@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "title": "Jamnapari",
+      "src": "/jamnapari.jpg"
+    },
+    {
+      "title": "Barbari",
+      "src": "/barbari.webp"
+    },
+    {
+      "title": "Sirohi",
+      "src": "/sirohi.webp"
+    },
+    {
+      "title": "Sojat",
+      "src": "/sojat.webp"
+    },
+    {
+      "title": "Surti",
+      "src": "/surti.jpg"
+    },
+    {
+      "title": "Sangamneri",
+      "src": "/sangamneri.jpg"
+    },
+    {
+      "title": "Boer",
+      "src": "/boer.jpg"
+    },
+    {
+      "title": "Osmanabadi",
+      "src": "/osmanabadi.jpg"
+    },
+    {
+      "title": "Jakhrana",
+      "src": "/jakhrana.jpg"
+    },
+    {
+      "title": "Sanen",
+      "src": "/sanen.jpg"
+    },
+    {
+      "title": "Konkan Kanyal",
+      "src": "/konkan.jpg"
+    }
+  ]
+}

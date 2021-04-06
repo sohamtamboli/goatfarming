@@ -1,91 +1,307 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
+  <v-app>
+    <v-app-bar v-show="isDesktop" prominent app hide-on-scroll fixed>
+      <div class="navbar">
+        <div class="logo__container">
+          <nuxt-link to="/"
+            ><v-img src="/navlogo.png" max-height="80" max-width="210" contain
+          /></nuxt-link>
+        </div>
+        <!-- <v-spacer></v-spacer> -->
+        <div class="right__menu">
+          <nuxt-link v-show="routeCheck" class="menu__links" to="/"
+            >Home</nuxt-link
+          >
+          <nuxt-link class="menu__links" to="/about">About</nuxt-link>
+          <nuxt-link class="menu__links" :to="{ path: '/', hash: '#breeds' }"
+            >Breeds</nuxt-link
+          >
+          <nuxt-link class="menu__links" :to="{ path: '/', hash: '#plans' }"
+            >Plans</nuxt-link
+          >
+          <nuxt-link class="menu__links" to="/contact">Contact Us</nuxt-link>
+        </div>
+      </div>
+    </v-app-bar>
+    <v-app-bar v-if="!isDesktop" elevate-on-scroll app fixed>
+      <nuxt-link to="/"
+        ><v-img src="/navlogo.png" max-height="80" max-width="210" contain
+      /></nuxt-link>
+    </v-app-bar>
+    <v-main id="#app">
+      <!-- <div v-if="isDesktop" class="nav__container" :class="themeCheck">
+        <div class="left__menu">
+          <nuxt-link class="menu__links" :class="themeCheck" to="/about"
+            >About</nuxt-link
+          >
+          <nuxt-link class="menu__links" :class="themeCheck" to="#"
+            >Breeds</nuxt-link
+          >
+          <nuxt-link class="menu__links" :class="themeCheck" to="#"
+            >Plans</nuxt-link
+          >
+        </div>
+        <div class="logo__container">
+          <nuxt-link to="/">
+            <img src="/v.png" alt="" class="logo" />
+          </nuxt-link>
+        </div>
+        <div class="right__menu">
+          <nuxt-link class="menu__links" :class="themeCheck" to="/contact"
+            >Contact Us</nuxt-link
+          >
+        </div>
+      </div> -->
+      <nuxt />
+    </v-main>
+    <v-bottom-navigation
+      v-if="!isDesktop"
       fixed
+      color="white"
+      hide-on-scroll
+      horizontal
       app
     >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
+      <v-btn v-show="routeCheck">
+        <span><nuxt-link to="/" class="bottom__links">Home</nuxt-link></span>
+      </v-btn>
+      <v-btn>
+        <span
+          ><nuxt-link to="/about" class="bottom__links">About</nuxt-link></span
         >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
+
+      <v-btn>
+        <span
+          ><nuxt-link class="bottom__links" :to="{ path: '/', hash: '#breeds' }"
+            >Breeds</nuxt-link
+          ></span
+        >
       </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
+
+      <v-btn>
+        <span
+          ><nuxt-link class="bottom__links" :to="{ path: '/', hash: '#plans' }"
+            >Plans</nuxt-link
+          ></span
+        >
       </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
+      <v-btn>
+        <span
+          ><nuxt-link class="bottom__links" to="/contact"
+            >Contact Us</nuxt-link
+          ></span
+        >
       </v-btn>
-    </v-app-bar>
-    <v-main>
+    </v-bottom-navigation>
+    <v-footer dark app absolute>
       <v-container>
-        <nuxt />
+        <v-card flat class="grid__wrapper">
+          <v-card-title class="header1"
+            >Connect with Us on Social Media</v-card-title
+          >
+          <v-card-text class="content1">
+            <v-btn v-for="icon in icons" :key="icon" icon>
+              <v-icon size="24px">
+                {{ icon }}
+              </v-icon>
+            </v-btn>
+          </v-card-text>
+          <v-card-title class="header2">Quick Links</v-card-title>
+          <v-card-text class="content2">
+            <ul class="quick__links__list">
+              <li>
+                <nuxt-link to="/" class="quick__links">Home</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/about" class="quick__links">About</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/contact" class="quick__links"
+                  >Contact Us</nuxt-link
+                >
+              </li>
+            </ul>
+          </v-card-text>
+          <v-card-title class="header3">Address/Phone</v-card-title>
+          <div class="content3">
+            <v-card-text class="icon__contain">
+              <v-icon size="20px"> mdi-map-marker </v-icon>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Consectetur numquam rem harum iusto ipsam perspiciatis aliquid,
+              cumque nobis eligendi voluptatem.
+            </v-card-text>
+            <v-card-text class="icon__contain"
+              ><v-icon size="20px"> mdi-cellphone </v-icon>
+              +91 123456789
+            </v-card-text>
+          </div>
+        </v-card>
       </v-container>
-    </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <v-divider></v-divider>
+      <v-col class="text-center" cols="12">
+        {{ new Date().getFullYear() }} — <strong>Recce</strong>
+      </v-col>
     </v-footer>
   </v-app>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
-    }
+  data: () => ({
+    icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram'],
+  }),
+  computed: {
+    themeCheck() {
+      if (this.$route.path === '/') {
+        return 'light'
+      }
+      return 'dark'
+    },
+    routeCheck() {
+      if (this.$route.path === '/') {
+        return false
+      }
+      return true
+    },
+    isDesktop() {
+      if (process.browser) {
+        if (
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          )
+        ) {
+          return false
+        }
+
+        return true
+      }
+
+      return false
+    },
   },
 }
 </script>
+
+<style scoped>
+.logo {
+  height: 60px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottom__links {
+  text-decoration: none;
+  color: #000;
+}
+.nav__container {
+  /* display: flex;
+  justify-content: space-around;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'lg rightm';
+  height: 80px;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+}
+.menu__links {
+  text-decoration: none;
+  color: #000;
+  padding: 2rem 3rem;
+}
+.left__menu > .menu__links:not(:last-child) {
+  margin-right: 2rem;
+}
+.left__menu {
+  grid-area: leftm;
+  place-self: center;
+}
+.logo__container {
+  grid-area: lg;
+  place-self: center;
+}
+.right__menu {
+  grid-area: rightm;
+  place-self: center;
+}
+.dark {
+  color: #000;
+}
+.light {
+  color: #fff;
+}
+.nuxt-link-exact-active {
+  color: orange;
+}
+
+.quick__links__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+.quick__links {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 12px;
+}
+.grid__wrapper {
+  display: grid;
+  grid-template-rows: 0.3fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'h1 h2 h3'
+    'c1 c2 c3';
+  width: 100%;
+  background: transparent;
+  gap: 32px;
+}
+
+.icon__contain {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+.header1 {
+  grid-area: h1;
+}
+.header2 {
+  grid-area: h2;
+}
+.header3 {
+  grid-area: h3;
+}
+.content1 {
+  grid-area: c1;
+}
+.content2 {
+  grid-area: c2;
+}
+.content3 {
+  grid-area: c3;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid__wrapper {
+    grid-auto-flow: column;
+    grid-template-rows: 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'h1'
+      'c1'
+      'h2'
+      'c2'
+      'h3'
+      'c3';
+    width: 100%;
+    background: transparent;
+    gap: 0;
+  }
+}
+</style>
