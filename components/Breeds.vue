@@ -55,6 +55,8 @@ export default {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+  width: 192.19px;
+  height: 218.53px;
 }
 .breed__img {
   border-radius: 20px 20px 0 0;

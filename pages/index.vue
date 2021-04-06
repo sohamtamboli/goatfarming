@@ -10,7 +10,7 @@
     <section>
       <v-container>
         <Heading title="Importance" />
-        <Importance />
+        <Importance class="card__grid" />
       </v-container>
     </section>
     <section id="breeds">
@@ -55,6 +55,10 @@ export default {
 .carousel__wrapper {
   background: #000;
   padding: 3rem 0;
+}
+
+.card__grid {
+  width: 100%;
 }
 .bg__wrappper {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
