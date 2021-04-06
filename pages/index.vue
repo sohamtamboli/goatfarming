@@ -16,7 +16,7 @@
     <section id="breeds">
       <div class="carousel__wrapper">
         <v-container>
-          <Heading title="Breeds" dark="dark" />
+          <Heading title="Breeds" dark />
           <Breeds
             data-aos="zoom-in"
             data-aos-duration="1000"

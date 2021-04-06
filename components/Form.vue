@@ -93,7 +93,7 @@ export default {
         this.$refs.form.reset()
       }
     },
-    submitForm() {
+    async submitForm() {
       const payload = {
         name: this.name,
         mobile: this.mobile,
@@ -103,8 +103,12 @@ export default {
         state: this.state,
         pincode: this.pincode,
       }
+      const resp = await this.$axios.$post(
+        `http://localhost:4000/api/contact/`,
+        payload
+      )
       // eslint-disable-next-line no-console
-      console.log(JSON.stringify(payload, null, 2))
+      console.log(resp)
     },
   },
 }

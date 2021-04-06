@@ -6,8 +6,8 @@
       :key="idx"
       class="card__wrapper"
       :data-aos="plan.aosType"
-      :data-aos-duration="aosTime"
-      :data-aos-delay="imp.aosDelay"
+      :data-aos-duration="plan.aosTime"
+      :data-aos-delay="plan.aosDelay"
       data-aos-easing="ease-out-back"
     >
       <v-card class="mx-auto" :max-width="dynoWidth">
