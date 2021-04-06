@@ -43,10 +43,8 @@
           class="mr-4"
           @click="validate"
         >
-          Validate
+          Submit
         </v-btn>
-
-        <v-btn color="error" class="mr-4" @click="reset"> Reset Form </v-btn>
       </v-form>
     </div>
     <div class="img__wrapper">
@@ -84,10 +82,23 @@ export default {
 
   methods: {
     validate() {
-      this.$refs.form.validate()
+      if (this.$refs.form.validate()) {
+        this.submitForm()
+        this.$refs.form.reset()
+      }
     },
-    reset() {
-      this.$refs.form.reset()
+    submitForm() {
+      const payload = {
+        name: this.name,
+        mobile: this.mobile,
+        email: this.email,
+        address: this.addressLineOne + ' ' + this.addressLineTwo,
+        city: this.city,
+        state: this.state,
+        pincode: this.pincode,
+      }
+      // eslint-disable-next-line no-console
+      console.log(JSON.stringify(payload, null, 2))
     },
   },
 }

@@ -9,6 +9,9 @@
         </div>
         <!-- <v-spacer></v-spacer> -->
         <div class="right__menu">
+          <nuxt-link v-show="routeCheck" class="menu__links" to="/"
+            >Home</nuxt-link
+          >
           <nuxt-link class="menu__links" to="/about">About</nuxt-link>
           <nuxt-link class="menu__links" :to="{ path: '/', hash: '#breeds' }"
             >Breeds</nuxt-link
@@ -59,6 +62,9 @@
       horizontal
       app
     >
+      <v-btn v-show="routeCheck">
+        <span><nuxt-link to="/" class="bottom__links">Home</nuxt-link></span>
+      </v-btn>
       <v-btn>
         <span
           ><nuxt-link to="/about" class="bottom__links">About</nuxt-link></span
@@ -88,7 +94,51 @@
         >
       </v-btn>
     </v-bottom-navigation>
-    <v-footer app absolute>
+    <v-footer dark app absolute>
+      <v-container>
+        <v-card flat class="grid__wrapper">
+          <v-card-title class="header1"
+            >Connect with Us on Social Media</v-card-title
+          >
+          <v-card-text class="content1">
+            <v-btn v-for="icon in icons" :key="icon" icon>
+              <v-icon size="24px">
+                {{ icon }}
+              </v-icon>
+            </v-btn>
+          </v-card-text>
+          <v-card-title class="header2">Quick Links</v-card-title>
+          <v-card-text class="content2">
+            <ul class="quick__links__list">
+              <li>
+                <nuxt-link to="/" class="quick__links">Home</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/about" class="quick__links">About</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/contact" class="quick__links"
+                  >Contact Us</nuxt-link
+                >
+              </li>
+            </ul>
+          </v-card-text>
+          <v-card-title class="header3">Address/Phone</v-card-title>
+          <div class="content3">
+            <v-card-text class="icon__contain">
+              <v-icon size="20px"> mdi-map-marker </v-icon>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Consectetur numquam rem harum iusto ipsam perspiciatis aliquid,
+              cumque nobis eligendi voluptatem.
+            </v-card-text>
+            <v-card-text class="icon__contain"
+              ><v-icon size="20px"> mdi-cellphone </v-icon>
+              +91 123456789
+            </v-card-text>
+          </div>
+        </v-card>
+      </v-container>
+      <v-divider></v-divider>
       <v-col class="text-center" cols="12">
         {{ new Date().getFullYear() }} — <strong>Recce</strong>
       </v-col>
@@ -98,12 +148,21 @@
 
 <script>
 export default {
+  data: () => ({
+    icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram'],
+  }),
   computed: {
     themeCheck() {
       if (this.$route.path === '/') {
         return 'light'
       }
       return 'dark'
+    },
+    routeCheck() {
+      if (this.$route.path === '/') {
+        return false
+      }
+      return true
     },
     isDesktop() {
       if (process.browser) {
@@ -176,5 +235,73 @@ export default {
 }
 .nuxt-link-exact-active {
   color: orange;
+}
+
+.quick__links__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+.quick__links {
+  text-decoration: none;
+  color: #fff;
+  padding: 0 12px;
+}
+.grid__wrapper {
+  display: grid;
+  grid-template-rows: 0.3fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'h1 h2 h3'
+    'c1 c2 c3';
+  width: 100%;
+  background: transparent;
+  gap: 32px;
+}
+
+.icon__contain {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+.header1 {
+  grid-area: h1;
+}
+.header2 {
+  grid-area: h2;
+}
+.header3 {
+  grid-area: h3;
+}
+.content1 {
+  grid-area: c1;
+}
+.content2 {
+  grid-area: c2;
+}
+.content3 {
+  grid-area: c3;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid__wrapper {
+    grid-auto-flow: column;
+    grid-template-rows: 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'h1'
+      'c1'
+      'h2'
+      'c2'
+      'h3'
+      'c3';
+    width: 100%;
+    background: transparent;
+    gap: 0;
+  }
 }
 </style>

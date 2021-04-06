@@ -94,14 +94,15 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.6s;
+  transition: all 0.3s;
   letter-spacing: 1px;
 }
 .btn:hover {
-  background: #ff7a00;
+  background: #ff4040;
 }
 .app-wrapper {
-  background: #dfe0dc;
+  background: #f1f1ee;
+  padding-bottom: 2rem;
 }
 .btn:focus {
   outline: none;
