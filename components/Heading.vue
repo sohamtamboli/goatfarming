@@ -26,9 +26,10 @@ export default {
 <style lang="scss" scoped>
 .title__section {
   font-size: 3rem;
+
   text-transform: uppercase;
   letter-spacing: 6px;
-  font-weight: 800;
+  font-weight: 300;
   width: 100%;
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -36,7 +37,7 @@ export default {
 }
 .title-divider {
   width: 5rem;
-  height: 5px;
+  height: 3px;
   margin: 0 auto 50px;
   color: #ff4040;
   background: #ff4040;
