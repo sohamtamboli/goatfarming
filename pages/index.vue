@@ -92,10 +92,11 @@ export default {
   border: none;
   color: #000;
   font-family: 'Roboto', sans-serif;
-  font-weight: 500;
+  font-weight: 300;
   text-decoration: none;
   transition: all 0.3s;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .btn:hover {
   background: #ff4040;

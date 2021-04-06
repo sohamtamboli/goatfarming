@@ -78,6 +78,7 @@ export default {
     state: '',
     stateRules: [(v) => !!v || 'State is required'],
     pincode: '',
+    checkScreen: true,
   }),
 
   methods: {
@@ -122,11 +123,14 @@ export default {
   height: 100%;
   border-radius: 0 10px 10px 0;
 }
-/* .form__container form {
-  flex: 2;
+@media only screen and (max-width: 768px) {
+  .form__container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .img__wrapper {
+    visibility: hidden;
+    display: none;
+  }
 }
-.form__container img {
-  flex: 1;
-  height: 600px;
-} */
 </style>

@@ -23,17 +23,15 @@
         </div>
       </div>
     </v-app-bar>
-    <v-app-bar v-if="!isDesktop" elevate-on-scroll app fixed>
-      <nuxt-link to="/"
-        ><v-img src="/navlogo.png" max-height="80" max-width="210" contain
-      /></nuxt-link>
-    </v-app-bar>
+
     <v-main id="#app">
       <!-- <div v-if="isDesktop" class="nav__container" :class="themeCheck">
         <div class="left__menu">
           <nuxt-link class="menu__links" :class="themeCheck" to="/about"
             >About</nuxt-link
           >
+          <v-img src="/navlogo.png" max-height="50" max-width="210" contain
+      />
           <nuxt-link class="menu__links" :class="themeCheck" to="#"
             >Breeds</nuxt-link
           >
@@ -101,46 +99,61 @@
             >Connect with Us on Social Media</v-card-title
           >
           <v-card-text class="content1">
-            <v-btn v-for="icon in icons" :key="icon" icon>
-              <v-icon size="24px">
-                {{ icon }}
-              </v-icon>
+            <v-btn v-for="icon in icons" :key="icon.link" icon>
+              <a :href="icon.link" target="_blank" class="social__icons">
+                <v-icon size="24px">
+                  {{ icon.icon }}
+                </v-icon>
+              </a>
             </v-btn>
           </v-card-text>
           <v-card-title class="header2">Quick Links</v-card-title>
           <v-card-text class="content2">
             <ul class="quick__links__list">
               <li>
-                <nuxt-link to="/" class="quick__links">Home</nuxt-link>
+                <h4><nuxt-link to="/" class="quick__links">Home</nuxt-link></h4>
               </li>
               <li>
-                <nuxt-link to="/about" class="quick__links">About</nuxt-link>
+                <h4>
+                  <nuxt-link to="/about" class="quick__links">About</nuxt-link>
+                </h4>
               </li>
               <li>
-                <nuxt-link to="/contact" class="quick__links"
-                  >Contact Us</nuxt-link
-                >
+                <h4>
+                  <nuxt-link to="/contact" class="quick__links"
+                    >Contact Us</nuxt-link
+                  >
+                </h4>
               </li>
             </ul>
           </v-card-text>
           <v-card-title class="header3">Address/Phone</v-card-title>
           <div class="content3">
-            <v-card-text class="icon__contain">
-              <v-icon size="20px"> mdi-map-marker </v-icon>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consectetur numquam rem harum iusto ipsam perspiciatis aliquid,
-              cumque nobis eligendi voluptatem.
+            <v-card-text class="icon__contain"
+              ><v-icon size="20px"> mdi-cellphone </v-icon> Dr. Shivjatak
+              pandurang <br />
+              9130969688 <br />
+              7666639838 <br />
+              9325264343
             </v-card-text>
             <v-card-text class="icon__contain"
-              ><v-icon size="20px"> mdi-cellphone </v-icon>
-              +91 123456789
+              ><v-icon size="20px"> mdi-email </v-icon>
+              passplusagropltd@gmail.com
+            </v-card-text>
+            <v-card-text class="icon__contain">
+              <v-icon size="20px"> mdi-map-marker </v-icon>
+              A/P KANDE [R52-17], KANDE, SANGLI, Sangli, Maharashtra, India,
+              415416.
             </v-card-text>
           </div>
         </v-card>
       </v-container>
-      <v-divider></v-divider>
+
       <v-col class="text-center" cols="12">
-        {{ new Date().getFullYear() }} — <strong>Recce</strong>
+        <v-divider></v-divider> <br />
+        <a href="https://reccemedia.co.in/" target="_blank" class="recce__link">
+          {{ new Date().getFullYear() }} — <strong>Recce</strong>
+        </a>
       </v-col>
     </v-footer>
   </v-app>
@@ -149,7 +162,12 @@
 <script>
 export default {
   data: () => ({
-    icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram'],
+    icons: [
+      { link: 'https://www.facebook.com/', icon: 'mdi-facebook' },
+      { link: 'https://twitter.com/', icon: 'mdi-twitter' },
+      { link: 'https://www.linkedin.com/', icon: 'mdi-linkedin' },
+      { link: 'https://www.instagram.com/', icon: 'mdi-instagram' },
+    ],
   }),
   computed: {
     themeCheck() {
@@ -253,6 +271,7 @@ export default {
 }
 .grid__wrapper {
   display: grid;
+  justify-content: center;
   grid-template-rows: 0.3fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
@@ -286,7 +305,15 @@ export default {
 .content3 {
   grid-area: c3;
 }
-
+.social__icons {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+}
+.recce__link {
+  text-decoration: none;
+  color: #ddd;
+}
 @media only screen and (max-width: 600px) {
   .grid__wrapper {
     grid-auto-flow: column;

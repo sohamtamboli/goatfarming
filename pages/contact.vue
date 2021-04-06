@@ -1,6 +1,7 @@
 <template>
   <v-container class="contact__grid__container">
-    <h1 class="text-center mt-4 mb-6">Contact Us</h1>
+    <!-- <h1 class="text-center mt-4 mb-6">Contact Us</h1> -->
+    <Heading title="Contact Us" class="mt-4" />
     <Form />
   </v-container>
 </template>
@@ -18,7 +19,7 @@ export default {
 .contact__grid__container {
   display: grid;
   place-items: center;
-  height: 100vh;
+  height: auto;
   margin-bottom: 5rem;
 }
 </style>
