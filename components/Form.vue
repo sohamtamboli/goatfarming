@@ -1,5 +1,10 @@
 <template>
-  <v-card elevation="8" class="form__container">
+  <v-card
+    elevation="8"
+    class="form__container"
+    data-aos="fade-down"
+    data-aos-duration="4000"
+  >
     <div class="form__wrapper">
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field

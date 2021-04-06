@@ -13,7 +13,10 @@
         "bankLoanValue": "75,000 to 1,50,000",
         "repayValue": "3 Years",
         "approxGoatNoValue": "Group of 5 to 10",
-        "approxYearIncomeValue": "1 Lakh"
+        "approxYearIncomeValue": "1 Lakh",
+        "aosType": "fade-right",
+        "aosTime": 8000,
+        "aosDelay": 100
       },
       {
         "name": "Anjali Plan - 2",
@@ -27,7 +30,10 @@
         "bankLoanValue": "3 Lakhs",
         "repayValue": "3 Years",
         "approxGoatNoValue": "20 * 1 Male Goat",
-        "approxYearIncomeValue": "2 Lakhs"
+        "approxYearIncomeValue": "2 Lakhs",
+        "aosType": "fade-up",
+        "aosTime": 6000,
+        "aosDelay": 200
       },
       {
         "name": "Anjali Plan – 3",
@@ -43,7 +49,10 @@
         "approxGoatNoValue": "20 * 1 Male Goat",
         "approxYearIncomeValue": "PC goat purchases",
         "tooltipText1": "3 times the debt self investment",
-        "tooltipText2": "Per capita for the goat purchases"
+        "tooltipText2": "Per capita for the goat purchases",
+        "aosType": "fade-left",
+        "aosTime": 8000,
+        "aosDelay": 100
       }
     ],
 

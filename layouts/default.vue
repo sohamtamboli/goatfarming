@@ -228,7 +228,7 @@ export default {
 .menu__links {
   text-decoration: none;
   color: #000;
-  padding: 2rem 3rem;
+  padding: 2rem 1rem;
 }
 .left__menu > .menu__links:not(:last-child) {
   margin-right: 2rem;

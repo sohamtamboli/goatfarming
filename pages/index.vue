@@ -17,14 +17,11 @@
       <div class="carousel__wrapper">
         <v-container>
           <Heading title="Breeds" dark="dark" />
-          <!-- <v-card id="breeds" flat class="breeds__container">
-        <div class="cards__container">
-          <div v-for="i in goatData.data" :key="i.title" class="wrapper">
-            <Breeds :goat="i" />
-          </div>
-        </div>
-      </v-card> -->
-          <Breeds />
+          <Breeds
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-easing="ease-out"
+          />
         </v-container>
       </div>
     </section>

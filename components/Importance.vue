@@ -1,7 +1,16 @@
 <template>
   <v-container>
     <div class="imp__cards__container">
-      <v-card v-for="imp in treeData" :key="imp.id" flat class="imp__card">
+      <v-card
+        v-for="imp in treeData"
+        :key="imp.id"
+        flat
+        class="imp__card"
+        :data-aos="imp.aosType"
+        :data-aos-duration="imp.aosTime"
+        :data-aos-delay="imp.aosDelay"
+        data-aos-easing="ease-out-back"
+      >
         <v-card-title class="imp__title text-center">
           {{ imp.name }}
         </v-card-title>
