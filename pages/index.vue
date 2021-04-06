@@ -2,8 +2,27 @@
   <div class="app-wrapper">
     <section>
       <div id="banner" class="bg__wrappper">
+        <video autoplay muted loop class="bg-video">
+          <source :src="videoSrc" type="video/mp4" />
+        </video>
         <div class="content__wrapper">
-          <nuxt-link to="/contact" class="btn">Enquire</nuxt-link>
+          <div
+            data-aos="fade-in"
+            data-aos-duration="4000"
+            class="word__wrapper"
+          >
+            Build <i>your</i> Goat Farms <br />
+            <i>with</i> Anjali Goat Farming
+          </div>
+          <nuxt-link
+            to="/contact"
+            class="btn"
+            data-aos="fade-in"
+            data-aos-duration="1000"
+            data-aos-delay="1"
+            data-aos-easing="ease-out-back"
+            >Enquire</nuxt-link
+          >
         </div>
       </div>
     </section>
@@ -39,16 +58,28 @@ import Breeds from '@/components/Breeds'
 import PlanCard from '@/components/PlanCard'
 import Importance from '@/components/Importance'
 import Heading from '@/components/Heading'
+
 export default {
+  data: () => ({
+    videoSrc: '/vidMobile.mp4',
+  }),
   components: {
     Breeds,
     PlanCard,
     Importance,
     Heading,
   },
+  mounted() {
+    if (window.screen.width > 600) {
+      this.videoSrc = '/vidDesktop.mp4'
+    } else {
+      this.videoSrc = '/vidMobile.mp4'
+    }
+  },
 }
 </script>
-<style lang="css" scoped>
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Halant&display=swap');
 .carousel__wrapper {
   background: #212121;
   padding: 3rem 0;
@@ -58,20 +89,22 @@ export default {
   width: 100%;
 }
 .bg__wrappper {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)),
     url('@/static/banner.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 80vh;
+  height: 85vh;
   margin-top: -80px;
   display: grid;
   place-items: center;
   color: #fff;
+  position: relative;
 }
 .content__wrapper {
   text-align: center;
   font-size: 30px;
+  position: relative;
 }
 .title {
   font-size: 2.5em;
@@ -81,7 +114,7 @@ export default {
   margin-bottom: 1rem;
 }
 .btn {
-  font-size: 2.3rem;
+  font-size: 2rem;
   padding: 1rem 2rem;
   background: #fff;
   border-radius: 30px;
@@ -89,14 +122,15 @@ export default {
   border: none;
   color: #000;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   text-decoration: none;
   transition: all 0.3s;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 .btn:hover {
-  background: #ff4040;
+  background: #ff4848;
+  color: white;
 }
 .app-wrapper {
   background: #f1f1ee;
@@ -120,7 +154,24 @@ export default {
   padding: 1rem;
   grid-template-columns: repeat(4, 300px);
 }
-
+.bg-video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 85vh;
+  object-fit: fill;
+}
+.word__line {
+  font-weight: 700;
+}
+.word__wrapper {
+  padding: 2rem;
+  font-size: 128px;
+  font-family: 'Halant', serif;
+  font-weight: 300;
+}
 @media only screen and (max-width: 1200px) {
   .cards__container {
     grid-template-columns: repeat(2, 280px);
@@ -136,6 +187,9 @@ export default {
   .breeds__container {
     margin: 0.8rem;
     padding: 0.5rem;
+  }
+  .word__wrapper {
+    font-size: 32px;
   }
 }
 </style>
