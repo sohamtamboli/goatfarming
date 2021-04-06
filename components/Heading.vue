@@ -32,6 +32,7 @@ export default {
   width: 100%;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  cursor: default;
 }
 .title-divider {
   width: 5rem;

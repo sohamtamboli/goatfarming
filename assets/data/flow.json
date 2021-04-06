@@ -1,0 +1,54 @@
+{
+  "flow": [
+    {
+      "id": 1,
+      "title": "Registration",
+      "para": "Registration with Business Government – Industry Support."
+    },
+    {
+      "id": 2,
+      "title": "Training",
+      "para": "Goat rearing training."
+    },
+    {
+      "id": 3,
+      "title": "Finance",
+      "para": "Facilitation for goat rearing loan, guidance for documents and actual loan case."
+    },
+    {
+      "id": 4,
+      "title": "Shed Construction",
+      "para": "Shed construction plan, estimate, quotation, assistance for building permits – actual help with the construction of the shed."
+    },
+    {
+      "id": 5,
+      "title": "Market Guidance",
+      "para": "Goat breed, price, local market for its purchase and goat shopping center guidance. (purchases must be made by the project owner himself)"
+    },
+    {
+      "id": 6,
+      "title": "Vaccination",
+      "para": "Goat vaccination – annual vaccination, follow up veterinary medicine, guidance medical officer available."
+    },
+    {
+      "id": 7,
+      "title": "Nutrition",
+      "para": "Ideal feed for goats with mineral co-animal food guidance and availability."
+    },
+    {
+      "id": 8,
+      "title": "Fodder Guidance",
+      "para": "Green fodder, dry fodder with its guidance as well as seeds available."
+    },
+    {
+      "id": 9,
+      "title": "Sales and Marketing",
+      "para": "Sales arrangement available for goat marketing and guidance and assistance in actual purchase arrangement."
+    },
+    {
+      "id": 10,
+      "title": "Business Insurance",
+      "para": "Business insurance guidance and help from Indian government company – United Insurance & the New India Insurance Company has cover."
+    }
+  ]
+}
