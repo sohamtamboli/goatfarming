@@ -16,8 +16,14 @@
           <nuxt-link class="menu__links" :to="{ path: '/', hash: '#plans' }"
             >Plans</nuxt-link
           >
+          <nuxt-link class="menu__links" to="/contact">Contact Us</nuxt-link>
         </div>
       </div>
+    </v-app-bar>
+    <v-app-bar v-if="!isDesktop" elevate-on-scroll app fixed>
+      <nuxt-link to="/"
+        ><v-img src="/navlogo.png" max-height="80" max-width="210" contain
+      /></nuxt-link>
     </v-app-bar>
     <v-main id="#app">
       <!-- <div v-if="isDesktop" class="nav__container" :class="themeCheck">
@@ -54,18 +60,32 @@
       app
     >
       <v-btn>
-        <span>About</span>
+        <span
+          ><nuxt-link to="/about" class="bottom__links">About</nuxt-link></span
+        >
       </v-btn>
 
       <v-btn>
-        <span>Breeds</span>
+        <span
+          ><nuxt-link class="bottom__links" :to="{ path: '/', hash: '#breeds' }"
+            >Breeds</nuxt-link
+          ></span
+        >
       </v-btn>
 
       <v-btn>
-        <span>Plans</span>
+        <span
+          ><nuxt-link class="bottom__links" :to="{ path: '/', hash: '#plans' }"
+            >Plans</nuxt-link
+          ></span
+        >
       </v-btn>
       <v-btn>
-        <span>Contact Us </span>
+        <span
+          ><nuxt-link class="bottom__links" to="/contact"
+            >Contact Us</nuxt-link
+          ></span
+        >
       </v-btn>
     </v-bottom-navigation>
     <v-footer app absolute>
@@ -113,7 +133,10 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-
+.bottom__links {
+  text-decoration: none;
+  color: #000;
+}
 .nav__container {
   /* display: flex;
   justify-content: space-around;

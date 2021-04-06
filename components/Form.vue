@@ -1,64 +1,53 @@
 <template>
   <v-card elevation="8" class="form__container">
     <div class="form__wrapper">
-      <form>
+      <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
-          v-model="payload.name"
-          :error-messages="nameErrors"
+          v-model="name"
+          :counter="60"
+          :rules="nameRules"
           label="Name"
           required
-          @input="$v.payload.name.$touch()"
-          @blur="$v.payload.name.$touch()"
         />
         <v-text-field
-          v-model="payload.mobile"
-          :error-messages="mobileErrors"
-          :counter="10"
+          v-model="mobile"
+          :rules="mobileRules"
           label="Mobile Number"
           required
-          @input="$v.payload.mobile.$touch()"
-          @blur="$v.payload.mobile.$touch()"
         />
         <v-text-field
-          v-model="payload.email"
-          :error-messages="emailErrors"
+          v-model="email"
+          :rules="emailRules"
           label="E-mail"
-          @input="$v.payload.email.$touch()"
-          @blur="$v.payload.email.$touch()"
+          required
         />
         <v-text-field
-          v-model="payload.addressLineOne"
-          :error-messages="addressLineOneErrors"
+          v-model="addressLineOne"
+          :rules="addressLineOneRules"
           label="Address Line 1"
           required
-          @input="$v.payload.addressLineOne.$touch()"
-          @blur="$v.payload.addressLineOne.$touch()"
         />
-        <v-text-field v-model="payload.addressLineTwo" label="Address Line 2" />
+        <v-text-field v-model="addressLineTwo" label="Address Line 2" />
+        <v-text-field v-model="city" :rules="cityRules" label="City" required />
         <v-text-field
-          v-model="payload.cityName"
-          :error-messages="cityNameErrors"
-          :counter="30"
-          label="City"
-          required
-          @input="$v.payload.cityName.$touch()"
-          @blur="$v.payload.cityName.$touch()"
-        />
-        <v-text-field
-          v-model="payload.stateName"
-          :error-messages="stateNameErrors"
+          v-model="state"
+          :rules="stateRules"
           label="State"
           required
-          @input="$v.payload.stateName.$touch()"
-          @blur="$v.payload.stateName.$touch()"
         />
-        <v-text-field v-model="payload.pincode" label="Pin Code" />
+        <v-text-field v-model="pincode" label="pincode" />
 
-        <div class="mt-4">
-          <v-btn class="mr-4" @click="submit"> submit </v-btn>
-          <v-btn @click="clear"> clear </v-btn>
-        </div>
-      </form>
+        <v-btn
+          :disabled="!valid"
+          color="success"
+          class="mr-4"
+          @click="validate"
+        >
+          Validate
+        </v-btn>
+
+        <v-btn color="error" class="mr-4" @click="reset"> Reset Form </v-btn>
+      </v-form>
     </div>
     <div class="img__wrapper">
       <img src="/formside.jpg" alt="" />
@@ -67,106 +56,38 @@
 </template>
 
 <script>
-import { validationMixin } from 'vuelidate'
-import { numeric, required, maxLength, email } from 'vuelidate/lib/validators'
-
 export default {
-  mixins: [validationMixin],
-
-  validations: {
-    name: { required, maxLength: maxLength(60) },
-    mobile: { numeric, required, maxLength: maxLength(10) },
-    email: { email },
-    addressLineOne: { required },
-    cityName: { required, maxLength: maxLength(30) },
-    stateName: { required, maxLength: maxLength(30) },
-  },
-
   data: () => ({
-    payload: {
-      name: '',
-      mobile: '',
-      email: '',
-      addressLineOne: '',
-      addressLineTwo: '',
-      cityName: '',
-      stateName: '',
-      pincode: '',
-    },
-    // payload: {
-    //   name: this.name,
-    //   mobile: this.mobile,
-    //   email: this.email,
-    //   addressLineOne: this.addressLineOne,
-    //   addressLineTwo: this.addressLineTwo,
-    //   cityName: this.cityName,
-    //   stateName: this.stateName,
-    //   pincode: this.pincode,
-    // },
+    valid: true,
+    name: '',
+    nameRules: [
+      (v) => !!v || 'Name is required',
+      (v) => (v && v.length <= 60) || 'Name must be less than 60 characters',
+    ],
+    mobile: '',
+    mobileRules: [
+      (v) => !!v || 'Mobile number is required',
+      (v) =>
+        /^(\+\d{1,3}[- ]?)?\d{10}$/.test(v) || 'Mobile number must be valid',
+    ],
+    email: '',
+    emailRules: [(v) => /.+@.+\..+/.test(v) || 'E-mail must be valid'],
+    addressLineOne: '',
+    addressLineOneRules: [(v) => !!v || 'Address is required'],
+    addressLineTwo: '',
+    city: '',
+    cityRules: [(v) => !!v || 'City is required'],
+    state: '',
+    stateRules: [(v) => !!v || 'State is required'],
+    pincode: '',
   }),
 
-  computed: {
-    nameErrors() {
-      const errors = []
-      if (!this.$v.payload.name.$dirty) return errors
-      !this.$v.payload.name.maxLength &&
-        errors.push('Name must be at most 60 characters long')
-      !this.$v.payload.name.required && errors.push('Name is required.')
-      return errors
-    },
-    mobileErrors() {
-      const errors = []
-      if (!this.$v.payload.mobile.$dirty) return errors
-      !this.$v.payload.mobile.numeric &&
-        errors.push('Mobile number must be digits')
-      !this.$v.payload.mobile.maxLength &&
-        errors.push('Mobile number must be 10 digits long')
-      !this.$v.payload.mobile.required &&
-        errors.push('Mobile number is required.')
-      return errors
-    },
-    emailErrors() {
-      const errors = []
-      if (!this.$v.payload.email.$dirty) return errors
-      !this.$v.payload.email.email && errors.push('Must be valid e-mail')
-      return errors
-    },
-    addressLineOneErrors() {
-      const errors = []
-      if (!this.$v.payload.addressLineOne.$dirty) return errors
-      !this.$v.payload.addressLineOne.required &&
-        errors.push('Address is required.')
-      return errors
-    },
-    cityNameErrors() {
-      const errors = []
-      if (!this.$v.payload.cityName.$dirty) return errors
-      !this.$v.payload.cityName.maxLength &&
-        errors.push('City name must be at most 30 characters long')
-      !this.$v.payload.cityName.required &&
-        errors.push('City name is required.')
-      return errors
-    },
-    stateNameErrors() {
-      const errors = []
-      if (!this.$v.payload.stateName.$dirty) return errors
-      !this.$v.payload.stateName.required &&
-        errors.push('State name is required.')
-      return errors
-    },
-  },
-  mounted() {
-    // eslint-disable-next-line no-console
-    console.log(this.payload.name)
-  },
-
   methods: {
-    submit() {
-      // eslint-disable-next-line no-console
-      console.log(JSON.stringify(this.payload, null, 2))
+    validate() {
+      this.$refs.form.validate()
     },
-    clear() {
-      this.$v.$reset()
+    reset() {
+      this.$refs.form.reset()
     },
   },
 }

@@ -16,7 +16,7 @@
     <section id="breeds">
       <div class="carousel__wrapper">
         <v-container>
-          <Heading title="Breeds" />
+          <Heading title="Breeds" dark="dark" />
           <!-- <v-card id="breeds" flat class="breeds__container">
         <div class="cards__container">
           <div v-for="i in goatData.data" :key="i.title" class="wrapper">
@@ -53,7 +53,7 @@ export default {
 </script>
 <style lang="css" scoped>
 .carousel__wrapper {
-  background: #000;
+  background: #212121;
   padding: 3rem 0;
 }
 
@@ -84,13 +84,15 @@ export default {
   margin-bottom: 1rem;
 }
 .btn {
-  font-size: 2rem;
+  font-size: 2.3rem;
   padding: 1rem 2rem;
-  background: #e77b15;
+  background: #fff;
   border-radius: 30px;
   outline: none;
   border: none;
-  color: #fff;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
   text-decoration: none;
   transition: all 0.6s;
   letter-spacing: 1px;

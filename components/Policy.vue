@@ -65,8 +65,8 @@ export default {}
 .inner__container {
   padding: 1rem;
   text-align: justify;
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 .ordered__list {
   line-height: 2;
@@ -81,8 +81,8 @@ export default {}
 .heading {
   text-align: center;
   margin: 1rem 0;
-  font-family: 'Halant', serif;
-  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   font-size: 2.2rem;
 }
 </style>

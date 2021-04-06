@@ -2,7 +2,7 @@
   <no-ssr>
     <carousel
       :autoplay="true"
-      :nav="false"
+      :nav="true"
       :dots="false"
       :responsive="{ 0: { items: 1 }, 600: { items: 3 }, 800: { items: 5 } }"
       :stage-padding="20"
@@ -80,6 +80,9 @@ export default {
   .img__wrapper {
     width: 150px;
     height: 150px;
+  }
+  .breed__card__wrapper {
+    margin: 0 0.5rem;
   }
 }
 </style>

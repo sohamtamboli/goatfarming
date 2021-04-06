@@ -5,7 +5,7 @@
         <v-card-title class="imp__title text-center">
           {{ imp.name }}
         </v-card-title>
-        <hr />
+
         <v-card-text class="text-justify">
           {{ imp.para }}
         </v-card-text>
@@ -35,7 +35,9 @@ export default {
 .imp__title {
   text-align: center !important;
 }
-
+.imp__card {
+  border-radius: 10px;
+}
 @media only screen and (max-width: 1200px) {
   .imp__cards__container {
     grid-template-columns: repeat(3, 280px);

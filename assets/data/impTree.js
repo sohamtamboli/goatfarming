@@ -25,7 +25,7 @@ export const imps = [
   },
   {
     id: 5,
-    name: 'Preparing the buck for Bakri Eid',
+    name: 'Preparing buck for Bakri Eid',
     para:
       'While preparing the kurbani buck for bakri eid, 1 year age, handsome, tall enough, colourful spots and having no injuries on the body such buck has enormous demand while also being worth for a hefty amount.',
   },

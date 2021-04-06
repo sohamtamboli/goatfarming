@@ -46,8 +46,8 @@ export default {}
 .preface__heading {
   text-align: center;
   margin: 1rem 0;
-  font-family: 'Halant', serif;
-  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   font-size: 2.2rem;
 }
 </style>
