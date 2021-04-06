@@ -151,7 +151,9 @@
 
       <v-col class="text-center" cols="12">
         <v-divider></v-divider> <br />
-        {{ new Date().getFullYear() }} — <strong>Recce</strong>
+        <a href="https://reccemedia.co.in/" target="_blank" class="recce__link">
+          {{ new Date().getFullYear() }} — <strong>Recce</strong>
+        </a>
       </v-col>
     </v-footer>
   </v-app>
@@ -308,7 +310,10 @@ export default {
   color: #fff;
   font-weight: 300;
 }
-
+.recce__link {
+  text-decoration: none;
+  color: #ddd;
+}
 @media only screen and (max-width: 600px) {
   .grid__wrapper {
     grid-auto-flow: column;
