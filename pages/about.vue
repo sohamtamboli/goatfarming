@@ -1,7 +1,12 @@
 <template>
   <div class="about__container">
-    <Preface />
-    <Policy />
+    <v-container>
+      <Preface />
+      <Policy />
+    </v-container>
+    <section class="page__section">
+      <div class="spacer" />
+    </section>
   </div>
 </template>
 
@@ -20,5 +25,12 @@ export default {
 .about__container {
   min-height: auto;
   margin-bottom: 2rem;
+}
+.page__section {
+  padding: 3rem 0;
+}
+.spacer {
+  height: 12px;
+  margin: 6rem 0;
 }
 </style>

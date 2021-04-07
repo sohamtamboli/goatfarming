@@ -41,7 +41,7 @@ export const imps = [
     aosType: 'slide-up',
     aosTime: 1000,
     aosDelay: 40,
-    name: 'Preparing buck for Bakri Eid',
+    name: 'Preparing buck for Bakri-Eid',
     para:
       'While preparing the kurbani buck for bakri eid, 1 year age, handsome, tall enough, colourful spots and having no injuries on the body such buck has enormous demand while also being worth for a hefty amount.',
   },

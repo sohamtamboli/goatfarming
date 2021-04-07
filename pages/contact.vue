@@ -21,6 +21,9 @@
         </v-btn>
       </template>
     </v-snackbar>
+    <section class="page__section">
+      <div class="spacer" />
+    </section>
   </v-container>
 </template>
 
@@ -60,5 +63,12 @@ export default {
   height: auto;
   margin-bottom: 5rem;
   position: relative;
+}
+.page__section {
+  padding: 3rem 0;
+}
+.spacer {
+  height: 12px;
+  margin: 6rem 0;
 }
 </style>

@@ -43,6 +43,7 @@ export default {
 }
 .imp__title {
   text-align: center !important;
+  word-break: break-word;
 }
 .imp__card {
   border-radius: 10px;
