@@ -9,7 +9,7 @@
           /></nuxt-link>
         </div>
         <!-- <v-spacer></v-spacer> -->
-        <div class="right__menu">
+        <div v-if="isDesktop" class="right__menu">
           <nuxt-link v-show="routeCheck" class="menu__links" to="/"
             >Home</nuxt-link
           >
@@ -24,12 +24,72 @@
         </div>
       </div>
     </v-app-bar>
-    <v-app-bar v-else>
-      <div class="logo__container">
-        <nuxt-link to="/"
-          ><v-img src="/navlogo.png" max-height="80" max-width="210" contain
-        /></nuxt-link>
-      </div>
+    <v-app-bar v-if="!isDesktop" dense app hide-on-scroll fixed>
+      <v-spacer></v-spacer>
+      <v-app-bar-nav-icon
+        v-if="!isDesktop"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+      <v-navigation-drawer v-model="drawer" height="100vh">
+        <v-list nav dense>
+          <v-list-item
+            ><div>
+              <nuxt-link to="/"
+                ><img
+                  class="logo"
+                  src="/navlogo.png"
+                  max-height="80"
+                  max-width="210"
+                  contain
+              /></nuxt-link></div
+          ></v-list-item>
+          <v-list-item-group v-model="group">
+            <v-list-item v-show="routeCheck">
+              <v-list-item-title
+                ><nuxt-link to="/" class="bottom__links"
+                  >Home</nuxt-link
+                ></v-list-item-title
+              >
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-title
+                ><nuxt-link to="/about" class="bottom__links"
+                  >About</nuxt-link
+                ></v-list-item-title
+              >
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-title
+                ><nuxt-link
+                  class="bottom__links"
+                  :to="{ path: '/', hash: '#breeds' }"
+                  >Breeds</nuxt-link
+                ></v-list-item-title
+              >
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-title
+                ><nuxt-link
+                  class="bottom__links"
+                  :to="{ path: '/', hash: '#plans' }"
+                  >Plans</nuxt-link
+                ></v-list-item-title
+              >
+            </v-list-item>
+
+            <v-list-item>
+              <v-list-item-title
+                ><nuxt-link class="bottom__links" to="/contact"
+                  >Contact Us</nuxt-link
+                ></v-list-item-title
+              >
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
     </v-app-bar>
 
     <v-main id="#app">
@@ -60,7 +120,7 @@
       </div> -->
       <nuxt />
     </v-main>
-    <v-bottom-navigation
+    <!-- <v-bottom-navigation
       v-if="!isDesktop"
       fixed
       color="white"
@@ -99,7 +159,7 @@
           ></span
         >
       </v-btn>
-    </v-bottom-navigation>
+    </v-bottom-navigation> -->
     <v-footer dark app absolute class="footer__container">
       <v-container>
         <v-card flat class="grid__wrapper">
@@ -184,7 +244,10 @@ export default {
       { link: 'https://www.instagram.com/', icon: 'mdi-instagram' },
     ],
     isDesktop: false,
+    drawer: false,
+    group: null,
   }),
+
   computed: {
     themeCheck() {
       if (this.$route.path === '/') {
@@ -214,6 +277,11 @@ export default {
     //   return false
     // },
   },
+  watch: {
+    group() {
+      this.drawer = false
+    },
+  },
   mounted() {
     this.isDesktop = !this.isMobile()
   },
@@ -240,7 +308,7 @@ export default {
 
 <style scoped>
 .logo {
-  height: 60px;
+  height: 80px;
 }
 .navbar {
   display: flex;

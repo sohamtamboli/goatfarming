@@ -17,3 +17,16 @@ html {
   width: 100% !important;
   display: grid !important;
 }
+
+.v-navigation-drawer__content {
+  height: 100%;
+  overflow-y: auto;
+  /* width: 240px; */
+  overflow-x: hidden;
+  padding: 3rem;
+  text-align: center;
+}
+.v-toolbar__content,
+.v-toolbar__extension {
+  padding: 0 !important;
+}

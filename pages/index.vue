@@ -61,15 +61,16 @@ import Importance from '@/components/Importance'
 import Heading from '@/components/Heading'
 
 export default {
-  data: () => ({
-    videoSrc: undefined,
-  }),
   components: {
     Breeds,
     PlanCard,
     Importance,
     Heading,
   },
+  data: () => ({
+    videoSrc: undefined,
+  }),
+
   mounted() {
     if (this.isMobile()) {
       this.videoSrc = '/vidMobile.mp4'
