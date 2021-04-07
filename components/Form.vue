@@ -1,5 +1,10 @@
 <template>
-  <v-card elevation="8" class="form__container">
+  <v-card
+    elevation="8"
+    class="form__container"
+    data-aos="fade-down"
+    data-aos-duration="4000"
+  >
     <div class="form__wrapper">
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
@@ -88,7 +93,7 @@ export default {
         this.$refs.form.reset()
       }
     },
-    submitForm() {
+    async submitForm() {
       const payload = {
         name: this.name,
         mobile: this.mobile,
@@ -98,8 +103,16 @@ export default {
         state: this.state,
         pincode: this.pincode,
       }
-      // eslint-disable-next-line no-console
-      console.log(JSON.stringify(payload, null, 2))
+      try {
+        // eslint-disable-next-line no-unused-vars
+        const resp = await this.$axios.$post(
+          `http://localhost:4000/api/contact/`,
+          payload
+        )
+        this.$nuxt.$emit('showSuccessSnackbar')
+      } catch (error) {
+        this.$nuxt.$emit('showErrorSnackbar')
+      }
     },
   },
 }
@@ -110,6 +123,7 @@ export default {
   display: flex;
 
   border-radius: 10px;
+  margin-bottom: 2rem;
 }
 .form__wrapper {
   flex: 1;

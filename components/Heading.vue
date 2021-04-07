@@ -9,7 +9,7 @@
 export default {
   props: {
     title: { type: String, default: '' },
-    dark: { type: String, default: '' },
+    dark: { type: Boolean, default: false },
   },
   computed: {
     checkProp() {

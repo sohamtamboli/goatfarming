@@ -14,10 +14,13 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['@/assets/css/main.css'],
+  css: ['@/assets/css/main.css', 'aos/dist/aos.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [{ src: '~/plugins/owl.js', ssr: false }],
+  plugins: [
+    { src: '~/plugins/owl.js', ssr: false },
+    { src: '@/plugins/aos.js', ssr: false },
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,

@@ -47,7 +47,8 @@ export default {
   align-items: center;
 }
 .img__title {
-  font-weight: 400;
+  font-weight: 300;
+  padding: 12px 0;
 }
 .breed__card__wrapper {
   background: #fff;
@@ -80,8 +81,8 @@ export default {
 }
 @media only screen and (max-width: 600px) {
   .img__wrapper {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 300px;
   }
   .breed__card__wrapper {
     margin: 0 0.5rem;

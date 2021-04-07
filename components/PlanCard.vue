@@ -1,7 +1,15 @@
 <template>
   <!-- <div> -->
   <div class="plan__cards__container">
-    <div v-for="(plan, idx) in planData" :key="idx" class="card__wrapper">
+    <div
+      v-for="(plan, idx) in planData"
+      :key="idx"
+      class="card__wrapper"
+      :data-aos="plan.aosType"
+      :data-aos-duration="plan.aosTime"
+      :data-aos-delay="plan.aosDelay"
+      data-aos-easing="ease-out-back"
+    >
       <v-card class="mx-auto" :max-width="dynoWidth">
         <v-img :src="plan.img" height="200px"></v-img>
 
