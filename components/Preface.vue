@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container class="preface__container">
-      <h1 class="preface__heading">Preface</h1>
+      <Heading title="Preface" />
       <p class="preface__para">
         Goat Farming is a business which can be achieved with the help of less
         investment and also less space. In closed goat farming, the fodder

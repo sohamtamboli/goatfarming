@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="about__container">
     <Preface />
     <Policy />
   </div>
@@ -16,4 +16,9 @@ export default {
 }
 </script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+.about__container {
+  min-height: auto;
+  margin-bottom: 2rem;
+}
+</style>

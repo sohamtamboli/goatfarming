@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container class="outer__container">
-      <h1 class="heading">Company Approach</h1>
+      <Heading title="Company Approach" />
       <div class="inner__container">
         <ol class="ordered__list">
           <li>The company will first give the information and counseling.</li>
@@ -61,6 +61,7 @@ export default {}
 <style lang="css" scoped>
 .outer__container {
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .inner__container {
   padding: 1rem;

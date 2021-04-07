@@ -83,6 +83,8 @@ export default {
 .carousel__wrapper {
   background: #212121;
   padding: 3rem 0;
+  z-index: 1;
+  position: relative;
 }
 
 .card__grid {

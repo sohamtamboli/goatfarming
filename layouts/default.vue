@@ -92,7 +92,7 @@
         >
       </v-btn>
     </v-bottom-navigation>
-    <v-footer dark app absolute>
+    <v-footer dark app absolute class="footer__container">
       <v-container>
         <v-card flat class="grid__wrapper">
           <v-card-title class="header1"
@@ -130,15 +130,20 @@
           <v-card-title class="header3">Address/Phone</v-card-title>
           <div class="content3">
             <v-card-text class="icon__contain"
-              ><v-icon size="20px"> mdi-cellphone </v-icon> Dr. Shivjatak
-              pandurang <br />
-              9130969688 <br />
-              7666639838 <br />
-              9325264343
+              ><v-icon size="20px"> mdi-account </v-icon>Dr. Shivjatak pandurang
+              <br
+            /></v-card-text>
+            <v-card-text class="icon__contain"
+              ><v-icon size="20px"> mdi-cellphone </v-icon>
+              <span class="mobNumbers">
+                <Tooltip content="9130969688" />
+                <Tooltip content="7666639838" />
+                <Tooltip content="9325264343" />
+              </span>
             </v-card-text>
             <v-card-text class="icon__contain"
               ><v-icon size="20px"> mdi-email </v-icon>
-              passplusagropltd@gmail.com
+              <Tooltip content="passplusagropltd@gmail.com" />
             </v-card-text>
             <v-card-text class="icon__contain">
               <v-icon size="20px"> mdi-map-marker </v-icon>
@@ -160,7 +165,9 @@
 </template>
 
 <script>
+import Tooltip from '~/components/Tooltip.vue'
 export default {
+  components: { Tooltip },
   data: () => ({
     icons: [
       { link: 'https://www.facebook.com/', icon: 'mdi-facebook' },
@@ -287,6 +294,10 @@ export default {
   gap: 12px;
   align-items: baseline;
 }
+.mobNumbers {
+  display: flex;
+  flex-direction: column;
+}
 .header1 {
   grid-area: h1;
 }
@@ -310,6 +321,9 @@ export default {
   color: #fff;
   font-weight: 300;
 }
+.footer__container {
+  margin-top: 2rem;
+}
 .recce__link {
   text-decoration: none;
   color: #ddd;
@@ -317,7 +331,7 @@ export default {
 @media only screen and (max-width: 600px) {
   .grid__wrapper {
     grid-auto-flow: column;
-    grid-template-rows: 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr 0.5fr;
     grid-template-columns: 1fr;
     grid-template-areas:
       'h1'

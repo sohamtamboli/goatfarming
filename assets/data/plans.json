@@ -14,7 +14,7 @@
         "repayValue": "3 Years",
         "approxGoatNoValue": "Group of 5 to 10",
         "approxYearIncomeValue": "1 Lakh",
-        "aosType": "fade-right",
+        "aosType": "fade-up",
         "aosTime": 8000,
         "aosDelay": 100
       },
@@ -50,7 +50,7 @@
         "approxYearIncomeValue": "PC goat purchases",
         "tooltipText1": "3 times the debt self investment",
         "tooltipText2": "Per capita for the goat purchases",
-        "aosType": "fade-left",
+        "aosType": "fade-up",
         "aosTime": 8000,
         "aosDelay": 100
       }

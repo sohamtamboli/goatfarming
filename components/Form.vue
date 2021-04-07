@@ -103,12 +103,16 @@ export default {
         state: this.state,
         pincode: this.pincode,
       }
-      const resp = await this.$axios.$post(
-        `http://localhost:4000/api/contact/`,
-        payload
-      )
-      // eslint-disable-next-line no-console
-      console.log(resp)
+      try {
+        // eslint-disable-next-line no-unused-vars
+        const resp = await this.$axios.$post(
+          `http://localhost:4000/api/contact/`,
+          payload
+        )
+        this.$nuxt.$emit('showSuccessSnackbar')
+      } catch (error) {
+        this.$nuxt.$emit('showErrorSnackbar')
+      }
     },
   },
 }
@@ -119,6 +123,7 @@ export default {
   display: flex;
 
   border-radius: 10px;
+  margin-bottom: 2rem;
 }
 .form__wrapper {
   flex: 1;
