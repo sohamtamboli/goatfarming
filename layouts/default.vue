@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-escape */
 <template>
   <v-app>
-    <v-app-bar v-if="isDesktop" prominent app hide-on-scroll fixed>
+    <v-app-bar v-if="isDesktop" prominent app fixed>
       <div class="navbar">
         <div class="logo__container">
           <nuxt-link to="/"
@@ -24,7 +24,7 @@
         </div>
       </div>
     </v-app-bar>
-    <v-app-bar v-if="!isDesktop" dense app hide-on-scroll fixed>
+    <v-app-bar v-if="!isDesktop" dense app fixed>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon
         v-if="!isDesktop"

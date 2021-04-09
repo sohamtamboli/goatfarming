@@ -30,3 +30,31 @@ html {
 .v-toolbar__extension {
   padding: 0 !important;
 }
+
+.owl-carousel {
+  position: relative !important;
+}
+.owl-prev {
+  font-size: 5rem !important;
+  color: white !important;
+  position: absolute !important;
+  left: -95px !important;
+  top: 10px !important;
+  outline: none !important;
+  border: none !important;
+}
+.owl-next {
+  font-size: 5rem !important;
+  color: white !important;
+  position: absolute !important;
+  right: -95px !important;
+  top: 10px !important;
+  outline: none !important;
+  border: none !important;
+}
+
+.owl-next:hover,
+.owl-prev:hover,
+.owl-nav:hover {
+  background: transparent !important;
+}
