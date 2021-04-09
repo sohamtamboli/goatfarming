@@ -161,16 +161,24 @@ export default {
   margin: 6rem 0;
 }
 .app-wrapper {
-  background-color: #efefef;
-  background-image: url('https://unsplash.com/photos/izzit01AX_U/download?w=2400');
+  background-color: #fff;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    ),
+    url('https://unsplash.com/photos/izzit01AX_U/download?w=2400');
   background-repeat: no-repeat;
   background-position: bottom;
   padding-bottom: 2rem;
   @media only screen and (max-width: 600px) {
-    background-image: url('https://unsplash.com/photos/QSK3gaRlq3Y/download?w=640');
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0)
+      ),
+      url('https://unsplash.com/photos/QSK3gaRlq3Y/download?w=640');
     background-repeat: no-repeat;
     background-position: bottom;
-    background-color: #fafafa;
+    background-color: #fff;
   }
 }
 .btn:focus {
@@ -205,7 +213,7 @@ export default {
 }
 .word__wrapper {
   padding: 2rem;
-  font-size: 128px;
+  font-size: 6rem;
   font-family: 'Halant', serif;
   font-weight: 300;
 }

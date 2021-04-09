@@ -28,16 +28,23 @@ export default {
 .about__container {
   min-height: auto;
   margin-bottom: 2rem;
-  background-color: #efefef;
-  background-image: url('https://unsplash.com/photos/izzit01AX_U/download?w=2400');
+
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    ),
+    url('https://unsplash.com/photos/izzit01AX_U/download?w=2400');
   background-repeat: no-repeat;
   background-position: bottom;
 
   @media only screen and (max-width: 600px) {
-    background-image: url('https://unsplash.com/photos/QSK3gaRlq3Y/download?w=640');
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0)
+      ),
+      url('https://unsplash.com/photos/QSK3gaRlq3Y/download?w=640');
     background-repeat: no-repeat;
     background-position: bottom;
-    background-color: #fafafa;
   }
 }
 .page__section {

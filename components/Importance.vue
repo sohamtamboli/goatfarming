@@ -46,6 +46,7 @@ export default {
   word-break: break-word;
 }
 .imp__card {
+  border: 1px solid #ccc;
   border-radius: 10px;
 }
 @media only screen and (max-width: 1200px) {
