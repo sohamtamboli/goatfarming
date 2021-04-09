@@ -106,7 +106,7 @@ export default {
       try {
         // eslint-disable-next-line no-unused-vars
         const resp = await this.$axios.$post(
-          `http://localhost:4000/api/contact/`,
+          `https://goatfarming-backend.herokuapp.com/api/contact/`,
           payload
         )
         this.$nuxt.$emit('showSuccessSnackbar')

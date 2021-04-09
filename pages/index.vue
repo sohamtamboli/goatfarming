@@ -161,8 +161,17 @@ export default {
   margin: 6rem 0;
 }
 .app-wrapper {
-  background: #f1f1ee;
+  background-color: #efefef;
+  background-image: url('https://unsplash.com/photos/izzit01AX_U/download?w=2400');
+  background-repeat: no-repeat;
+  background-position: bottom;
   padding-bottom: 2rem;
+  @media only screen and (max-width: 600px) {
+    background-image: url('https://unsplash.com/photos/QSK3gaRlq3Y/download?w=640');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: #fafafa;
+  }
 }
 .btn:focus {
   outline: none;

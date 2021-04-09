@@ -1,6 +1,6 @@
 <template>
   <div class="about__container">
-    <v-container>
+    <v-container class="text__container">
       <Preface />
       <Policy />
     </v-container>
@@ -21,13 +21,30 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+.text__container {
+  background-color: transparent;
+}
 .about__container {
   min-height: auto;
   margin-bottom: 2rem;
+  background-color: #efefef;
+  background-image: url('https://unsplash.com/photos/izzit01AX_U/download?w=2400');
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  @media only screen and (max-width: 600px) {
+    background-image: url('https://unsplash.com/photos/QSK3gaRlq3Y/download?w=640');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: #fafafa;
+  }
 }
 .page__section {
-  padding: 3rem 0;
+  padding: 12rem 0;
+  @media only screen and (max-width: 600px) {
+    padding: 3rem 0;
+  }
 }
 .spacer {
   height: 12px;
