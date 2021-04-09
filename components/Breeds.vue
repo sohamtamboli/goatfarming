@@ -6,7 +6,7 @@
       :dots="false"
       :responsive="{ 0: { items: 1 }, 600: { items: 3 }, 800: { items: 5 } }"
       :stage-padding="20"
-      loop
+      :loop="true"
     >
       <div
         v-for="goat in goatData.data"
@@ -73,6 +73,24 @@ export default {
   /* background: rgb(52, 52, 52); */
   background: transparent;
 }
+.owl-carousel {
+  position: relative;
+}
+.owl-prev {
+  font-size: 5rem;
+  color: white;
+  position: absolute;
+  left: -95px;
+  top: 10px;
+}
+.owl-next {
+  font-size: 5rem;
+  color: white;
+  position: absolute;
+  right: -95px;
+  top: 10px;
+}
+
 @media only screen and (max-width: 1200px) {
   .img__wrapper {
     width: 250px;
