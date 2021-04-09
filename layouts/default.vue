@@ -25,80 +25,88 @@
         </div>
       </div>
     </v-app-bar>
-    <v-app-bar v-if="!isDesktop" dense hide-on-scroll app fixed>
-      <v-spacer></v-spacer>
+    <v-app-bar v-if="!isDesktop" app fixed>
       <v-app-bar-nav-icon
         v-if="!isDesktop"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <v-navigation-drawer v-model="drawer" height="100vh">
-        <v-list nav dense>
-          <v-list-item
-            ><div>
-              <nuxt-link to="/"
-                ><img
-                  class="logo"
-                  src="/navlogo.png"
-                  max-height="80"
-                  max-width="210"
-                  contain
-              /></nuxt-link></div
-          ></v-list-item>
-          <v-list-item-group v-model="group">
-            <v-list-item v-show="routeCheck">
-              <v-list-item-title
-                ><nuxt-link to="/" class="bottom__links"
-                  >Home</nuxt-link
-                ></v-list-item-title
-              >
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-title
-                ><nuxt-link to="/about" class="bottom__links"
-                  >About</nuxt-link
-                ></v-list-item-title
-              >
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-title
-                ><nuxt-link
-                  class="bottom__links"
-                  :to="{ path: '/', hash: '#breeds' }"
-                  >Breeds</nuxt-link
-                ></v-list-item-title
-              >
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-title
-                ><nuxt-link
-                  class="bottom__links"
-                  :to="{ path: '/', hash: '#plans' }"
-                  >Plans</nuxt-link
-                ></v-list-item-title
-              >
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-title
-                ><nuxt-link class="bottom__links" to="/work"
-                  >Work</nuxt-link
-                ></v-list-item-title
-              >
-            </v-list-item>
-            <v-list-item>
-              <v-list-item-title
-                ><nuxt-link class="bottom__links" to="/contact"
-                  >Contact Us</nuxt-link
-                ></v-list-item-title
-              >
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-navigation-drawer>
+      <v-spacer></v-spacer>
+      <nuxt-link to="/"
+        ><v-img
+          class="navLogo"
+          src="/navlogo.png"
+          max-height="50"
+          max-width="105"
+          contain
+      /></nuxt-link>
     </v-app-bar>
+    <v-navigation-drawer v-model="drawer" fixed height="100vh">
+      <v-list nav dense>
+        <v-list-item
+          ><div>
+            <nuxt-link to="/"
+              ><img
+                class="logo"
+                src="/navlogo.png"
+                max-height="80"
+                max-width="210"
+                contain
+            /></nuxt-link></div
+        ></v-list-item>
+        <v-list-item-group v-model="group">
+          <v-list-item v-show="routeCheck">
+            <v-list-item-title
+              ><nuxt-link to="/" class="bottom__links"
+                >Home</nuxt-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><nuxt-link to="/about" class="bottom__links"
+                >About</nuxt-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><nuxt-link
+                class="bottom__links"
+                :to="{ path: '/', hash: '#breeds' }"
+                >Breeds</nuxt-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><nuxt-link
+                class="bottom__links"
+                :to="{ path: '/', hash: '#plans' }"
+                >Plans</nuxt-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title
+              ><nuxt-link class="bottom__links" to="/work"
+                >Work</nuxt-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title
+              ><nuxt-link class="bottom__links" to="/contact"
+                >Contact Us</nuxt-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
 
     <v-main id="#app">
       <!-- <div v-if="isDesktop" class="nav__container" :class="themeCheck">
@@ -372,7 +380,9 @@ export default {
 .nuxt-link-exact-active {
   color: orange;
 }
-
+.navLogo {
+  margin-left: auto;
+}
 .quick__links__list {
   display: flex;
   flex-direction: column;

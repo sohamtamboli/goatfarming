@@ -3,52 +3,62 @@
     {
       "id": 1,
       "title": "Registration",
-      "para": "Registration with Business Government – Industry Support."
+      "para": "Registration with Business Government – Industry Support.",
+      "img": "/registeration.svg"
     },
     {
       "id": 2,
       "title": "Training",
-      "para": "Goat rearing training."
+      "para": "Goat rearing training.",
+      "img": "/registeration.svg"
     },
     {
       "id": 3,
       "title": "Finance",
-      "para": "Facilitation for goat rearing loan, guidance for documents and actual loan case."
+      "para": "Facilitation for goat rearing loan, guidance for documents and actual loan case.",
+      "img": "/registeration.svg"
     },
     {
       "id": 4,
       "title": "Shed Construction",
-      "para": "Shed construction plan, estimate, quotation, assistance for building permits – actual help with the construction of the shed."
+      "para": "Shed construction plan, estimate, quotation, assistance for building permits – actual help with the construction of the shed.",
+      "img": "/construction.svg"
     },
     {
       "id": 5,
       "title": "Market Guidance",
-      "para": "Goat breed, price, local market for its purchase and goat shopping center guidance. (purchases must be made by the project owner himself)"
+      "para": "Goat breed, price, local market for its purchase and goat shopping center guidance. (purchases must be made by the project owner himself)",
+      "img": "/guidance.svg"
     },
     {
       "id": 6,
       "title": "Vaccination",
-      "para": "Goat vaccination – annual vaccination, follow up veterinary medicine, guidance medical officer available."
+      "para": "Goat vaccination – annual vaccination, follow up veterinary medicine, guidance medical officer available.",
+      "img": "/vaccination.svg"
     },
     {
       "id": 7,
       "title": "Nutrition",
-      "para": "Ideal feed for goats with mineral co-animal food guidance and availability."
+      "para": "Ideal feed for goats with mineral co-animal food guidance and availability.",
+      "img": "/vaccination.svg"
     },
     {
       "id": 8,
       "title": "Fodder Guidance",
-      "para": "Green fodder, dry fodder with its guidance as well as seeds available."
+      "para": "Green fodder, dry fodder with its guidance as well as seeds available.",
+      "img": "/fodder.svg"
     },
     {
       "id": 9,
       "title": "Sales and Marketing",
-      "para": "Sales arrangement available for goat marketing and guidance and assistance in actual purchase arrangement."
+      "para": "Sales arrangement available for goat marketing and guidance and assistance in actual purchase arrangement.",
+      "img": "/sales.svg"
     },
     {
       "id": 10,
       "title": "Business Insurance",
-      "para": "Business insurance guidance and help from Indian government company – United Insurance & the New India Insurance Company has cover."
+      "para": "Business insurance guidance and help from Indian government company – United Insurance & the New India Insurance Company has cover.",
+      "img": "/insurance.svg"
     }
   ]
 }
