@@ -8,14 +8,19 @@ html {
   padding: 0 !important;
 }
 
-.v-toolbar--prominent .v-toolbar__content {
-  align-items: center !important;
-}
-
-.v-toolbar__content {
-  height: 128px !important;
-  width: 100% !important;
-  display: grid !important;
+@media only screen and (min-width: 600px) {
+  .v-toolbar--prominent .v-toolbar__content {
+    align-items: center !important;
+  }
+  .v-toolbar__content {
+    height: 128px !important;
+    width: 100% !important;
+    display: grid !important;
+  }
+  .v-toolbar__content,
+  .v-toolbar__extension {
+    padding: 0 !important;
+  }
 }
 
 .v-navigation-drawer__content {
@@ -25,10 +30,6 @@ html {
   overflow-x: hidden;
   padding: 3rem;
   text-align: center;
-}
-.v-toolbar__content,
-.v-toolbar__extension {
-  padding: 0 !important;
 }
 
 .owl-carousel {

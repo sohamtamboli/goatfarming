@@ -2,7 +2,7 @@
   <no-ssr>
     <carousel
       :autoplay="true"
-      :nav="true"
+      :nav="isDesktop"
       :dots="false"
       :responsive="{ 0: { items: 1 }, 600: { items: 3 }, 800: { items: 5 } }"
       :stage-padding="20"
@@ -35,7 +35,13 @@ import goatBreedData from '@/assets/data/breeds.json'
 export default {
   data: () => ({
     goatData: goatBreedData,
+    isDesktop: false,
   }),
+  mounted() {
+    if (window.screen.width > 768) {
+      this.isDesktop = true
+    }
+  },
 }
 </script>
 

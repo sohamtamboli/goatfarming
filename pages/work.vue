@@ -2,7 +2,11 @@
   <v-container class="flow__container">
     <Heading title="Work Flow" />
     <v-timeline align-top>
-      <v-timeline-item v-for="i in flowData" :key="i.id" hide-dot>
+      <v-timeline-item
+        v-for="(i, idx) in flowData"
+        :key="`${i.id}-${idx}`"
+        hide-dot
+      >
         <template v-slot:opposite class="right__aligned">
           <span>
             <v-img
@@ -11,7 +15,8 @@
               max-width="300"
               class="img"
               contain
-              src="https://picsum.photos/id/11/500/300"
+              :class="idx % 2 ? `odd` : `even`"
+              :src="i.img"
             ></v-img>
           </span>
         </template>
@@ -43,6 +48,9 @@
       </template>
       <span>Download PDF</span>
     </v-tooltip>
+    <section class="page__section">
+      <div class="spacer" />
+    </section>
   </v-container>
 </template>
 
@@ -71,5 +79,15 @@ export default {
 .v-timeline-item__opposite {
   display: flex !important;
   justify-content: flex-end !important;
+}
+.page__section {
+  padding: 3rem 0;
+}
+.spacer {
+  height: 12px;
+  margin: 6rem 0;
+}
+.even {
+  margin-left: auto;
 }
 </style>
