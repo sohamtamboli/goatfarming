@@ -32,14 +32,15 @@
         <Importance :treedata="impCardsData" class="card__grid" />
       </v-container>
     </section>
-    <section id="breeds" class="carousel__wrapper page__section">
+    <section id="services" class="carousel__wrapper page__section">
       <v-container>
-        <Heading title="Breeds" dark />
-        <Breeds
+        <Heading title="Services" dark />
+        <Services />
+        <!-- <Breeds
           data-aos="zoom-in"
           data-aos-duration="1000"
           data-aos-easing="ease-out"
-        />
+        /> -->
       </v-container>
     </section>
     <section id="plans" class="page__section">
@@ -55,7 +56,8 @@
 </template>
 
 <script>
-import Breeds from '@/components/Breeds'
+// import Breeds from '@/components/Breeds'
+import Services from '@/components/Services'
 import PlanCard from '@/components/PlanCard'
 import Importance from '@/components/Importance'
 import Heading from '@/components/Heading'
@@ -63,7 +65,8 @@ import { imps } from '@/assets/data/impTree.js'
 
 export default {
   components: {
-    Breeds,
+    // Breeds,
+    Services,
     PlanCard,
     Importance,
     Heading,

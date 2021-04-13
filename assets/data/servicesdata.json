@@ -1,0 +1,96 @@
+{
+  "services": {
+    "english": [
+      {
+        "id": 1,
+        "title": "Loan selection"
+      },
+      {
+        "id": 2,
+        "title": "Udyam Registration"
+      },
+      {
+        "id": 3,
+        "title": "Construction work - Plan, Estimate and Execution"
+      },
+      {
+        "id": 4,
+        "title": "Guidance for goat type, breed and buying available"
+      },
+      {
+        "id": 5,
+        "title": "Provides vaccination and veterinary medicines"
+      },
+      {
+        "id": 6,
+        "title": "Provide insurance to goats (only indian companies - The New India Insurance company, United Insurance company ) Insurance will be provided through General insurance."
+      },
+      {
+        "id": 7,
+        "title": "Guidance for animal feed and availability of seeds"
+      },
+      {
+        "id": 8,
+        "title": "Animal feed guidance and medicines available"
+      },
+      {
+        "id": 9,
+        "title": "Any other assistance for total healthy rearing"
+      },
+      {
+        "id": 10,
+        "title": "Grants will be provided if and only if all the government rules and regulations are satisfied. Complete 5 years Guidance for planning a profitable financial project and increase a guaranteed income"
+      },
+      {
+        "id": 11,
+        "title": "Guidance and assistance for managing buying and selling of goats along with the marketing"
+      }
+    ],
+    "marathi": [
+      {
+        "id": 1,
+        "title": "MARATHI DATA  Loan selection"
+      },
+      {
+        "id": 2,
+        "title": "MARATHI DATA  Udyam Registration"
+      },
+      {
+        "id": 3,
+        "title": "MARATHI DATA  Construction work - Plan, Estimate and Execution"
+      },
+      {
+        "id": 4,
+        "title": "MARATHI DATA  Guidance for goat type, breed and buying available"
+      },
+      {
+        "id": 5,
+        "title": "MARATHI DATA  Provides vaccination and veterinary medicines"
+      },
+      {
+        "id": 6,
+        "title": "MARATHI DATA  Provide insurance to goats (only indian companies - The New India Insurance company, United Insurance company ) Insurance will be provided through General insurance."
+      },
+      {
+        "id": 7,
+        "title": "MARATHI DATA  Guidance for animal feed and availability of seeds"
+      },
+      {
+        "id": 8,
+        "title": "MARATHI DATA  Animal feed guidance and medicines available"
+      },
+      {
+        "id": 9,
+        "title": "MARATHI DATA  Any other assistance for total healthy rearing"
+      },
+      {
+        "id": 10,
+        "title": "MARATHI DATA  Grants will be provided if and only if all the government rules and regulations are satisfied. Complete 5 years Guidance for planning a profitable financial project and increase a guaranteed income"
+      },
+      {
+        "id": 11,
+        "title": "MARATHI DATA  Guidance and assistance for managing buying and selling of goats along with the marketing"
+      }
+    ]
+  }
+}
