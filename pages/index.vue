@@ -29,7 +29,7 @@
     <section class="page__section">
       <v-container>
         <Heading title="Importance" />
-        <Importance class="card__grid" />
+        <Importance :treedata="impCardsData" class="card__grid" />
       </v-container>
     </section>
     <section id="breeds" class="carousel__wrapper page__section">
@@ -59,6 +59,7 @@ import Breeds from '@/components/Breeds'
 import PlanCard from '@/components/PlanCard'
 import Importance from '@/components/Importance'
 import Heading from '@/components/Heading'
+import { imps } from '@/assets/data/impTree.js'
 
 export default {
   components: {
@@ -69,6 +70,7 @@ export default {
   },
   data: () => ({
     videoSrc: undefined,
+    impCardsData: imps,
   }),
 
   mounted() {

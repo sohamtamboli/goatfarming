@@ -2,7 +2,7 @@
   <v-container>
     <div class="imp__cards__container">
       <v-card
-        v-for="imp in treeData"
+        v-for="imp in treedata"
         :key="imp.id"
         flat
         class="imp__card"
@@ -24,11 +24,10 @@
 </template>
 
 <script>
-import { imps } from '@/assets/data/impTree.js'
 export default {
-  data: () => ({
-    treeData: imps,
-  }),
+  props: {
+    treedata: { type: Array, default: () => [] },
+  },
 }
 </script>
 

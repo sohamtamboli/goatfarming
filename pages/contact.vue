@@ -4,6 +4,54 @@
       <!-- <h1 class="text-center mt-4 mb-6">Contact Us</h1> -->
       <Heading title="Contact Us" class="mt-4" />
       <Form />
+      <v-card elevation="8" class="mt-4">
+        <v-card-title> Terms and Conditions: </v-card-title>
+        <v-card-text>
+          <ol>
+            <li>Free First Registration.</li>
+            <li>
+              Aadhar card, Pan card, 7/12 extract, 8-A extract, 6 months Bank
+              Statement and Government land valuation should be submitted to the
+              company first.
+            </li>
+            <li>
+              Company has all the rights to reject any application if all the
+              required procedure is not possible.
+            </li>
+            <li>Udyam Registration available through online portal.</li>
+            <li>Open a Current Account of the firm in the bank.</li>
+            <li>
+              Customer should submit all the related documents required for loan
+              application as per the rules.
+            </li>
+            <li>Customer should deposit 25% amount in the current account.</li>
+            <li>
+              Shed construction process should be started only after the loan
+              amount is disbursed.
+            </li>
+            <li>
+              Company will provide guidance related to the type, breed of the
+              goat, deal should be done by the customer.
+            </li>
+            <li>
+              Total initial vaccination will be provided from the company free
+              of cost.
+            </li>
+            <li>
+              Insurance will be done for all the goats as soon as the government
+              veterinary officer authorised signatures.
+            </li>
+            <li>
+              Animal feed, animal medical services, marketing,etc other services
+              are available at reasonable rates as per the company contract.
+            </li>
+            <li>
+              Guidance and real assistance will be provided to take up the
+              financial profit projects for next 5 years.
+            </li>
+          </ol>
+        </v-card-text>
+      </v-card>
       <v-snackbar
         v-model="snackbar"
         :multi-line="multiLine"
