@@ -4,61 +4,61 @@
       "id": 1,
       "title": "Registration",
       "para": "Registration with Business Government – Industry Support.",
-      "img": "/registeration.svg"
+      "img": "/1.svg"
     },
     {
       "id": 2,
       "title": "Training",
       "para": "Goat rearing training.",
-      "img": "/registeration.svg"
+      "img": "/2.svg"
     },
     {
       "id": 3,
       "title": "Finance",
       "para": "Facilitation for goat rearing loan, guidance for documents and actual loan case.",
-      "img": "/registeration.svg"
+      "img": "/3.svg"
     },
     {
       "id": 4,
       "title": "Shed Construction",
       "para": "Shed construction plan, estimate, quotation, assistance for building permits – actual help with the construction of the shed.",
-      "img": "/construction.svg"
+      "img": "/4.svg"
     },
     {
       "id": 5,
       "title": "Market Guidance",
       "para": "Goat breed, price, local market for its purchase and goat shopping center guidance. (purchases must be made by the project owner himself)",
-      "img": "/guidance.svg"
+      "img": "/5.svg"
     },
     {
       "id": 6,
       "title": "Vaccination",
       "para": "Goat vaccination – annual vaccination, follow up veterinary medicine, guidance medical officer available.",
-      "img": "/vaccination.svg"
+      "img": "/6.svg"
     },
     {
       "id": 7,
       "title": "Nutrition",
       "para": "Ideal feed for goats with mineral co-animal food guidance and availability.",
-      "img": "/vaccination.svg"
+      "img": "/7.svg"
     },
     {
       "id": 8,
       "title": "Fodder Guidance",
       "para": "Green fodder, dry fodder with its guidance as well as seeds available.",
-      "img": "/fodder.svg"
+      "img": "/8.svg"
     },
     {
       "id": 9,
       "title": "Sales and Marketing",
       "para": "Sales arrangement available for goat marketing and guidance and assistance in actual purchase arrangement.",
-      "img": "/sales.svg"
+      "img": "/9.svg"
     },
     {
       "id": 10,
       "title": "Business Insurance",
       "para": "Business insurance guidance and help from Indian government company – United Insurance & the New India Insurance Company has cover.",
-      "img": "/insurance.svg"
+      "img": "/10.svg"
     }
   ]
 }

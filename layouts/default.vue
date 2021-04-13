@@ -5,7 +5,7 @@
       <div class="navbar">
         <div class="logo__container">
           <nuxt-link to="/"
-            ><v-img src="/navlogo.png" max-height="80" max-width="210" contain
+            ><v-img src="/navlogo.webp" max-height="80" max-width="210" contain
           /></nuxt-link>
         </div>
         <!-- <v-spacer></v-spacer> -->
@@ -21,6 +21,9 @@
             >Plans</nuxt-link
           >
           <nuxt-link class="menu__links" to="/work">Work</nuxt-link>
+          <nuxt-link class="menu__links" to="/sister-concerns"
+            >Sister Concerns</nuxt-link
+          >
           <nuxt-link class="menu__links" to="/contact">Contact Us</nuxt-link>
         </div>
       </div>
@@ -34,7 +37,7 @@
       <nuxt-link to="/"
         ><v-img
           class="navLogo"
-          src="/navlogo.png"
+          src="/navlogo.webp"
           max-height="50"
           max-width="105"
           contain
@@ -47,7 +50,7 @@
             <nuxt-link to="/"
               ><img
                 class="logo"
-                src="/navlogo.png"
+                src="/navlogo.webp"
                 max-height="80"
                 max-width="210"
                 contain
@@ -99,6 +102,13 @@
           </v-list-item>
           <v-list-item>
             <v-list-item-title
+              ><nuxt-link class="bottom__links" to="/sister-concerns"
+                >Sister Concerns</nuxt-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title
               ><nuxt-link class="bottom__links" to="/contact"
                 >Contact Us</nuxt-link
               ></v-list-item-title
@@ -109,73 +119,9 @@
     </v-navigation-drawer>
 
     <v-main id="#app">
-      <!-- <div v-if="isDesktop" class="nav__container" :class="themeCheck">
-        <div class="left__menu">
-          <nuxt-link class="menu__links" :class="themeCheck" to="/about"
-            >About</nuxt-link
-          >
-          <v-img src="/navlogo.png" max-height="50" max-width="210" contain
-      />
-          <nuxt-link class="menu__links" :class="themeCheck" to="#"
-            >Breeds</nuxt-link
-          >
-          <nuxt-link class="menu__links" :class="themeCheck" to="#"
-            >Plans</nuxt-link
-          >
-        </div>
-        <div class="logo__container">
-          <nuxt-link to="/">
-            <img src="/v.png" alt="" class="logo" />
-          </nuxt-link>
-        </div>
-        <div class="right__menu">
-          <nuxt-link class="menu__links" :class="themeCheck" to="/contact"
-            >Contact Us</nuxt-link
-          >
-        </div>
-      </div> -->
       <nuxt />
     </v-main>
-    <!-- <v-bottom-navigation
-      v-if="!isDesktop"
-      fixed
-      color="white"
-      hide-on-scroll
-      horizontal
-      app
-    >
-      <v-btn v-show="routeCheck">
-        <span><nuxt-link to="/" class="bottom__links">Home</nuxt-link></span>
-      </v-btn>
-      <v-btn>
-        <span
-          ><nuxt-link to="/about" class="bottom__links">About</nuxt-link></span
-        >
-      </v-btn>
 
-      <v-btn>
-        <span
-          ><nuxt-link class="bottom__links" :to="{ path: '/', hash: '#breeds' }"
-            >Breeds</nuxt-link
-          ></span
-        >
-      </v-btn>
-
-      <v-btn>
-        <span
-          ><nuxt-link class="bottom__links" :to="{ path: '/', hash: '#plans' }"
-            >Plans</nuxt-link
-          ></span
-        >
-      </v-btn>
-      <v-btn>
-        <span
-          ><nuxt-link class="bottom__links" to="/contact"
-            >Contact Us</nuxt-link
-          ></span
-        >
-      </v-btn>
-    </v-bottom-navigation> -->
     <v-footer dark app absolute class="footer__container">
       <v-container>
         <v-card flat class="grid__wrapper">
@@ -205,6 +151,13 @@
               <li>
                 <h4>
                   <nuxt-link to="/work" class="quick__links">Work</nuxt-link>
+                </h4>
+              </li>
+              <li>
+                <h4>
+                  <nuxt-link to="/sister-concerns" class="quick__links"
+                    >Sister Concerns</nuxt-link
+                  >
                 </h4>
               </li>
               <li>

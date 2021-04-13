@@ -10,14 +10,20 @@ export default {
   props: {
     title: { type: String, default: '' },
     dark: { type: Boolean, default: false },
+    small: { type: Boolean, default: false },
   },
   computed: {
     checkProp() {
       if (this.dark) {
         return 'color-white'
-      } else {
+      }
+      if (!this.dark && this.small) {
         return 'color-black'
       }
+      if (this.small) {
+        return 'size-small'
+      }
+      return null
     },
   },
 }
@@ -46,15 +52,27 @@ export default {
 }
 .color-black {
   color: #000 !important;
+  font-size: 1.5rem !important;
 }
 
 .color-white {
   color: #fff !important;
 }
 
+.size-small {
+  font-size: 1.5rem !important;
+}
+
 @media only screen and (max-width: 600px) {
   .title__section {
     font-size: 2.2rem;
+  }
+  .color-black {
+    color: #000 !important;
+    font-size: 1.1rem !important;
+  }
+  .size-small {
+    font-size: 1.1rem !important;
   }
 }
 </style>

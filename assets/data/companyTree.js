@@ -1,7 +1,7 @@
 export const companies = [
   {
     id: 1,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 30,
     name: 'Anjali Goat Rearing Training Centre',
@@ -9,7 +9,7 @@ export const companies = [
   },
   {
     id: 2,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 30,
 
@@ -19,7 +19,7 @@ export const companies = [
   },
   {
     id: 3,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 30,
     name: 'Anjali MPSC Academy and Training Centre',
@@ -29,7 +29,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 4,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 40,
     name: 'Anjali Girls Hostel',
@@ -38,7 +38,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 5,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 40,
     name: 'Anjali Educational Academy',
@@ -47,7 +47,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 6,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 40,
     name: 'Anjali Dharmarth Clinic',
@@ -55,7 +55,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 7,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 50,
     name: 'Anjali Nidhi Company Ltd. ',
@@ -64,7 +64,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 8,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 50,
     name: 'Anjali Multi State Credit Society',
@@ -73,7 +73,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 9,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 50,
     name: 'Anjali Jaggery Powder Processing Pvt. Ltd. Project',
@@ -82,7 +82,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 10,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 60,
     name: 'Anjali Export',
@@ -90,7 +90,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 11,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 60,
     name: 'Anjali Multi Specialist Clinic Hospital',
@@ -99,7 +99,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 12,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 60,
     name: 'Saanchi Nursing School',
@@ -108,7 +108,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 13,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 70,
     name: 'Sadhna Foundation',
@@ -116,7 +116,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 14,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 70,
     name: 'Anjali Old Age Home',
@@ -125,7 +125,7 @@ Mentioned centre includes 3 years food, training, accommodation, teaching and gu
   },
   {
     id: 15,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 70,
     name: 'Anjali Old Age Centre',
@@ -135,7 +135,7 @@ To be shifted to company owned place in next 4 months
   },
   {
     id: 16,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 80,
     name: 'Anjali Construction',
@@ -143,7 +143,7 @@ To be shifted to company owned place in next 4 months
   },
   {
     id: 17,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 80,
     name: 'Anjali Goat Project at Gadivat Dist. Aurangabad',
@@ -151,7 +151,7 @@ To be shifted to company owned place in next 4 months
   },
   {
     id: 18,
-    aosType: 'zoom-out',
+    aosType: 'fade-up',
     aosTime: 1000,
     aosDelay: 80,
     name: 'Anjali Agri Goat Consultancy',

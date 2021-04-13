@@ -2,7 +2,16 @@
   <div class="page__wrapper">
     <section class="page__section">
       <v-container>
-        <Heading title="Anjali Group of Industries" />
+        <Heading title="Anjali Business Group" />
+        <v-img
+          src="/anjali.webp"
+          width="50%"
+          height="50%"
+          contain
+          class="logo__img"
+        >
+        </v-img>
+        <Heading title="Our Sister Concerns" small class="mt-16 pt-16" />
         <Importance :treedata="companyCardsData" class="card__grid" />
       </v-container>
     </section>
@@ -132,7 +141,9 @@ export default {
   height: 12px;
   margin: 6rem 0;
 }
-
+.logo__img {
+  margin: 0 auto;
+}
 .page__wrapper {
   background-color: #fafafa;
   background-image: linear-gradient(

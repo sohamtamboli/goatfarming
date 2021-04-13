@@ -10,9 +10,9 @@
         <template v-slot:opposite class="right__aligned">
           <span>
             <v-img
-              lazy-src="https://picsum.photos/id/11/10/6"
-              max-height="500"
-              max-width="300"
+              lazy-src=""
+              max-height="30%"
+              max-width="30%"
               class="img"
               contain
               :class="idx % 2 ? `odd` : `even`"
