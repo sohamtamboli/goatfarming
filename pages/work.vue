@@ -9,19 +9,13 @@
       >
         <template v-slot:opposite class="right__aligned">
           <span>
-            <v-img
-              lazy-src=""
-              max-height="30%"
-              max-width="30%"
-              class="img"
-              contain
-              :class="idx % 2 ? `odd` : `even`"
-              :src="i.img"
-            ></v-img>
+            <div class="no__wrapper" :class="idx % 2 ? `odd` : `even`">
+              <div class="no__content">{{ idx + 1 }}</div>
+            </div>
           </span>
         </template>
         <v-card class="elevation-2">
-          <v-card-title class="headline"> {{ i.title }} </v-card-title>
+          <v-card-title class="work__headline"> {{ i.title }} </v-card-title>
           <v-card-text>
             {{ i.para }}
           </v-card-text>
@@ -161,7 +155,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .flow__container {
   margin-bottom: 2rem;
   height: auto;
@@ -187,5 +181,30 @@ export default {
 }
 .even {
   margin-left: auto;
+}
+
+.work__headline {
+  word-break: break-word;
+}
+
+.no__wrapper {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  background: #ffa500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (min-width: 768px) {
+    height: 200px;
+    width: 200px;
+  }
+}
+.no__content {
+  color: #fff;
+  font-size: 50px;
+  @media only screen and (min-width: 768px) {
+    font-size: 100px;
+  }
 }
 </style>
