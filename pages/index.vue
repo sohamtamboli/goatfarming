@@ -6,13 +6,26 @@
           <source v-if="videoSrc" :src="videoSrc" type="video/mp4" />
         </video>
         <div class="content__wrapper">
-          <div
-            data-aos="fade-in"
-            data-aos-duration="4000"
-            class="word__wrapper"
-          >
-            Build <i>your</i> Goat Farms <br />
-            <i>with</i> Anjali Goat Farming
+          <Heading v-show="isDesktop" title="We Provide" dark />
+          <div class="word__wrapper mt-n8">
+            <v-container v-if="isDesktop" class="tagline__container">
+              <v-card
+                v-for="tagline in taglines"
+                :key="tagline.id"
+                class="tagline__card black--text"
+              >
+                <v-card-title class="tag__title justify-center">{{
+                  tagline.title
+                }}</v-card-title>
+                <v-card-text class="tag__text black--text text-center">{{
+                  tagline.para
+                }}</v-card-text>
+              </v-card>
+            </v-container>
+            <div v-else>
+              Build <i>your</i> Goat Farms <br />
+              <i>with</i> Anjali Goat Farming
+            </div>
           </div>
           <nuxt-link
             to="/contact"
@@ -26,20 +39,53 @@
         </div>
       </div>
     </section>
+    <section v-show="!isDesktop" class="page__section">
+      <v-container v-if="!isDesktop">
+        <Heading title="We Provide" />
+        <v-container class="tagline__container">
+          <v-card
+            v-for="tagline in taglines"
+            :key="tagline.id"
+            class="tagline__card black--text"
+          >
+            <v-card-title class="tag__title justify-center">{{
+              tagline.title
+            }}</v-card-title>
+            <v-card-text class="tag__text black--text text-center">{{
+              tagline.para
+            }}</v-card-text>
+          </v-card>
+        </v-container>
+      </v-container>
+    </section>
+    <section class="page__section">
+      <v-container>
+        <Heading title="Mission And Vision" />
+        <v-container class="mv__container">
+          <v-card v-for="n in mv" :key="n.id" elevation="0">
+            <v-card-title class="justify-center">{{ n.title }}</v-card-title>
+            <v-card-text class="text-center">
+              {{ n.para }}
+            </v-card-text>
+          </v-card>
+        </v-container>
+      </v-container>
+    </section>
     <section class="page__section">
       <v-container>
         <Heading title="Importance" />
         <Importance :treedata="impCardsData" class="card__grid" />
       </v-container>
     </section>
-    <section id="breeds" class="carousel__wrapper page__section">
+    <section id="services" class="carousel__wrapper page__section">
       <v-container>
-        <Heading title="Breeds" dark />
-        <Breeds
+        <Heading title="Services" dark />
+        <Services />
+        <!-- <Breeds
           data-aos="zoom-in"
           data-aos-duration="1000"
           data-aos-easing="ease-out"
-        />
+        /> -->
       </v-container>
     </section>
     <section id="plans" class="page__section">
@@ -55,30 +101,39 @@
 </template>
 
 <script>
-import Breeds from '@/components/Breeds'
+// import Breeds from '@/components/Breeds'
+import Services from '@/components/Services'
 import PlanCard from '@/components/PlanCard'
 import Importance from '@/components/Importance'
 import Heading from '@/components/Heading'
 import { imps } from '@/assets/data/impTree.js'
+import { tagdata } from '@/assets/data/tagline.json'
+import { mvdata } from '@/assets/data/missionvision.json'
 
 export default {
   components: {
-    Breeds,
+    // Breeds,
+    Services,
     PlanCard,
     Importance,
     Heading,
   },
   data: () => ({
     videoSrc: undefined,
+    isDesktop: true,
     impCardsData: imps,
+    taglines: tagdata,
+    mv: mvdata,
   }),
 
   mounted() {
     if (this.isMobile()) {
       this.videoSrc = '/vidMobile.mp4'
+      this.isDesktop = false
       // debugger
     } else {
       this.videoSrc = '/vidDesktop.mp4'
+      this.isDesktop = true
       // debugger
     }
   },
@@ -313,11 +368,46 @@ export default {
 .word__wrapper {
   padding: 2rem;
   font-size: 6rem;
+  gap: 32px;
   font-family: 'Halant', serif;
   font-weight: 300;
+  display: flex;
 }
 .page__section {
   padding: 3rem 0;
+}
+
+.tagline__container {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.tagline__card {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  flex: 1;
+  font-family: 'Halant', serif;
+
+  .tag__title {
+    font-weight: 600;
+    word-break: break-word;
+  }
+  .tag__text {
+    font-weight: 400;
+  }
+}
+
+.mv__container {
+  column-count: 2;
+  column-rule: 1px solid #ccc;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 @media only screen and (max-width: 1200px) {
   .cards__container {
@@ -336,10 +426,21 @@ export default {
     padding: 0.5rem;
   }
   .word__wrapper {
-    font-size: 32px;
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 5px;
   }
   .btn {
     font-size: 1rem;
+  }
+  .bg-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 85vh;
+    object-fit: fill;
   }
 }
 </style>

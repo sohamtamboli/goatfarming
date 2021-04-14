@@ -14,17 +14,18 @@
             >Home</nuxt-link
           >
           <nuxt-link class="menu__links" to="/about">About</nuxt-link>
-          <nuxt-link class="menu__links" :to="{ path: '/', hash: '#breeds' }"
-            >Breeds</nuxt-link
+          <nuxt-link class="menu__links" :to="{ path: '/', hash: '#services' }"
+            >Services</nuxt-link
           >
           <nuxt-link class="menu__links" :to="{ path: '/', hash: '#plans' }"
             >Plans</nuxt-link
           >
-          <nuxt-link class="menu__links" to="/work">Work</nuxt-link>
+
+          <nuxt-link class="menu__links" to="/breeds">Breeds</nuxt-link>
           <nuxt-link class="menu__links" to="/sister-concerns"
             >Sister Concerns</nuxt-link
           >
-          <nuxt-link class="menu__links" to="/contact">Contact Us</nuxt-link>
+          <nuxt-link class="menu__links" to="/contact">Register</nuxt-link>
         </div>
       </div>
     </v-app-bar>
@@ -72,13 +73,12 @@
               ></v-list-item-title
             >
           </v-list-item>
-
           <v-list-item>
             <v-list-item-title
               ><nuxt-link
                 class="bottom__links"
-                :to="{ path: '/', hash: '#breeds' }"
-                >Breeds</nuxt-link
+                :to="{ path: '/', hash: '#services' }"
+                >Services</nuxt-link
               ></v-list-item-title
             >
           </v-list-item>
@@ -95,8 +95,8 @@
 
           <v-list-item>
             <v-list-item-title
-              ><nuxt-link class="bottom__links" to="/work"
-                >Work</nuxt-link
+              ><nuxt-link class="bottom__links" to="/breeds"
+                >Breeds</nuxt-link
               ></v-list-item-title
             >
           </v-list-item>
@@ -110,7 +110,7 @@
           <v-list-item>
             <v-list-item-title
               ><nuxt-link class="bottom__links" to="/contact"
-                >Contact Us</nuxt-link
+                >Register</nuxt-link
               ></v-list-item-title
             >
           </v-list-item>
@@ -150,7 +150,11 @@
               </li>
               <li>
                 <h4>
-                  <nuxt-link to="/work" class="quick__links">Work</nuxt-link>
+                  <nuxt-link
+                    :to="{ path: '/', hash: '#services' }"
+                    class="quick__links"
+                    >Services</nuxt-link
+                  >
                 </h4>
               </li>
               <li>
@@ -163,7 +167,7 @@
               <li>
                 <h4>
                   <nuxt-link to="/contact" class="quick__links"
-                    >Contact Us</nuxt-link
+                    >Register</nuxt-link
                   >
                 </h4>
               </li>

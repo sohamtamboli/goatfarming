@@ -1,111 +1,24 @@
 <template>
-  <div class="page__wrapper">
-    <v-container class="contact__grid__container">
-      <!-- <h1 class="text-center mt-4 mb-6">Contact Us</h1> -->
-      <Heading title="Registration" class="mt-4" />
-      <Register />
-      <v-card elevation="8" class="mt-4">
-        <v-card-title> Terms and Conditions: </v-card-title>
-        <v-card-text>
-          <ol>
-            <li>Free First Registration.</li>
-            <li>
-              Aadhar card, Pan card, 7/12 extract, 8-A extract, 6 months Bank
-              Statement and Government land valuation should be submitted to the
-              company first.
-            </li>
-            <li>
-              Company has all the rights to reject any application if all the
-              required procedure is not possible.
-            </li>
-            <li>Udyam Registration available through online portal.</li>
-            <li>Open a Current Account of the firm in the bank.</li>
-            <li>
-              Customer should submit all the related documents required for loan
-              application as per the rules.
-            </li>
-            <li>Customer should deposit 25% amount in the current account.</li>
-            <li>
-              Shed construction process should be started only after the loan
-              amount is disbursed.
-            </li>
-            <li>
-              Company will provide guidance related to the type, breed of the
-              goat, deal should be done by the customer.
-            </li>
-            <li>
-              Total initial vaccination will be provided from the company free
-              of cost.
-            </li>
-            <li>
-              Insurance will be done for all the goats as soon as the government
-              veterinary officer authorised signatures.
-            </li>
-            <li>
-              Animal feed, animal medical services, marketing,etc other services
-              are available at reasonable rates as per the company contract.
-            </li>
-            <li>
-              Guidance and real assistance will be provided to take up the
-              financial profit projects for next 5 years.
-            </li>
-          </ol>
-        </v-card-text>
-      </v-card>
-      <v-snackbar
-        v-model="snackbar"
-        :multi-line="multiLine"
-        :timeout="timeout"
-        :color="color"
-        light
-        bottom
-        elevation="3"
-        style="padding-bottom: 10px"
-      >
-        <span class="white--text">{{ text }}</span>
-
-        <template v-slot:action="{ attrs }">
-          <v-btn color="white" text v-bind="attrs" @click="snackbar = false">
-            Close
-          </v-btn>
-        </template>
-      </v-snackbar>
-      <section class="page__section">
-        <div class="spacer" />
-      </section>
+  <div class="breeds__container">
+    <Heading title="Breeds" class="mt-10" />
+    <v-container>
+      <BreedsDesc />
     </v-container>
+    <section class="page__section">
+      <div class="spacer" />
+    </section>
   </div>
 </template>
 
 <script>
-import Register from '@/components/Register'
+import BreedsDesc from '@/components/BreedsDesc'
 export default {
   components: {
-    Register,
-  },
-  data: () => ({
-    multiLine: true,
-    snackbar: false,
-    color: '',
-    text: '',
-    timeout: 2000,
-  }),
-
-  created() {
-    this.$nuxt.$on('showErrorSnackbar', () => {
-      this.snackbar = true
-      this.text = `Something went wrong! :(`
-      this.color = 'red darken-1'
-    })
-    this.$nuxt.$on('showSuccessSnackbar', () => {
-      this.snackbar = true
-      this.text = `Your response has been recorded. We'll get to you shortly! :)`
-      this.color = 'success'
-    })
+    BreedsDesc,
   },
   head() {
     return {
-      title: 'Contact Us - Anjali Goatfarms',
+      title: 'About - Anjali Goatfarms',
       meta: [
         {
           hid: 'description',
@@ -203,22 +116,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contact__grid__container {
-  display: grid;
-  place-items: center;
-  height: auto;
-  margin-bottom: 4rem;
-  position: relative;
-}
-.page__section {
-  padding: 3rem 0;
-}
-.spacer {
-  height: 12px;
-  margin: 6rem 0;
-}
-.page__wrapper {
-  background-color: #fafafa;
+.breeds__container {
+  min-height: auto;
+  margin-bottom: 2rem;
+
   background-image: linear-gradient(
       rgba(255, 255, 255, 1),
       rgba(255, 255, 255, 0)
@@ -235,7 +136,16 @@ export default {
       url('https://unsplash.com/photos/QSK3gaRlq3Y/download?w=640');
     background-repeat: no-repeat;
     background-position: bottom;
-    background-color: #fafafa;
   }
+}
+.page__section {
+  padding: 12rem 0;
+  @media only screen and (max-width: 600px) {
+    padding: 3rem 0;
+  }
+}
+.spacer {
+  height: 12px;
+  margin: 6rem 0;
 }
 </style>
