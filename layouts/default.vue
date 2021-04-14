@@ -21,13 +21,11 @@
             >Plans</nuxt-link
           >
 
-          <nuxt-link class="menu__links" :to="{ path: '/', hash: '#breeds' }"
-            >Breeds</nuxt-link
-          >
+          <nuxt-link class="menu__links" to="/breeds">Breeds</nuxt-link>
           <nuxt-link class="menu__links" to="/sister-concerns"
             >Sister Concerns</nuxt-link
           >
-          <nuxt-link class="menu__links" to="/contact">Contact Us</nuxt-link>
+          <nuxt-link class="menu__links" to="/contact">Register</nuxt-link>
         </div>
       </div>
     </v-app-bar>
@@ -97,9 +95,7 @@
 
           <v-list-item>
             <v-list-item-title
-              ><nuxt-link
-                class="bottom__links"
-                :to="{ path: '/', hash: '#breeds' }"
+              ><nuxt-link class="bottom__links" to="/breeds"
                 >Breeds</nuxt-link
               ></v-list-item-title
             >
@@ -114,7 +110,7 @@
           <v-list-item>
             <v-list-item-title
               ><nuxt-link class="bottom__links" to="/contact"
-                >Contact Us</nuxt-link
+                >Register</nuxt-link
               ></v-list-item-title
             >
           </v-list-item>
@@ -171,7 +167,7 @@
               <li>
                 <h4>
                   <nuxt-link to="/contact" class="quick__links"
-                    >Contact Us</nuxt-link
+                    >Register</nuxt-link
                   >
                 </h4>
               </li>

@@ -3,23 +3,23 @@
     "english": [
       {
         "id": 1,
-        "title": "Loan selection"
+        "title": "Loan selection."
       },
       {
         "id": 2,
-        "title": "Udyam Registration"
+        "title": "Udyam Registration."
       },
       {
         "id": 3,
-        "title": "Construction work - Plan, Estimate and Execution"
+        "title": "Construction work - Plan, Estimate and Execution."
       },
       {
         "id": 4,
-        "title": "Guidance for goat type, breed and buying available"
+        "title": "Guidance for goat type, breed and buying available."
       },
       {
         "id": 5,
-        "title": "Provides vaccination and veterinary medicines"
+        "title": "Provides vaccination and veterinary medicines."
       },
       {
         "id": 6,
@@ -27,69 +27,69 @@
       },
       {
         "id": 7,
-        "title": "Guidance for animal feed and availability of seeds"
+        "title": "Guidance for animal feed and availability of seeds."
       },
       {
         "id": 8,
-        "title": "Animal feed guidance and medicines available"
+        "title": "Animal feed guidance and medicines available."
       },
       {
         "id": 9,
-        "title": "Any other assistance for total healthy rearing"
+        "title": "Any other assistance for total healthy rearing."
       },
       {
         "id": 10,
-        "title": "Grants will be provided if and only if all the government rules and regulations are satisfied. Complete 5 years Guidance for planning a profitable financial project and increase a guaranteed income"
+        "title": "Grants will be provided if and only if all the government rules and regulations are satisfied. Complete 5 years Guidance for planning a profitable financial project and increase a guaranteed income."
       },
       {
         "id": 11,
-        "title": "Guidance and assistance for managing buying and selling of goats along with the marketing"
+        "title": "Guidance and assistance for managing buying and selling of goats along with the marketing."
       }
     ],
     "marathi": [
       {
         "id": 1,
-        "title": "MARATHI DATA  Loan selection"
+        "title": "कर्जाची निवड(उद्यम आधार)शासन नोंदणी."
       },
       {
         "id": 2,
-        "title": "MARATHI DATA  Udyam Registration"
+        "title": "कर्जाची सुविधा."
       },
       {
         "id": 3,
-        "title": "MARATHI DATA  Construction work - Plan, Estimate and Execution"
+        "title": "बांधकाम - योजना, अंदाज, संयोजन."
       },
       {
         "id": 4,
-        "title": "MARATHI DATA  Guidance for goat type, breed and buying available"
+        "title": "शेळी ची जात, खरेदी, अधिक मार्गदर्शन आणि त्याची उपलब्धता."
       },
       {
         "id": 5,
-        "title": "MARATHI DATA  Provides vaccination and veterinary medicines"
+        "title": "कंपनी कडून लसीकरण आणि पशुवैद्यकीय चिकित्सा उपलब्ध करून देणे."
       },
       {
         "id": 6,
-        "title": "MARATHI DATA  Provide insurance to goats (only indian companies - The New India Insurance company, United Insurance company ) Insurance will be provided through General insurance."
+        "title": "कंपनीकडून विमा(विमा संरक्षण ) शेळीना दिलं जातं (फक्त भारतीय कंपनी - नवीन भारत विमा कंपनी, संयुक्त विमा कंपनी - सामान्य विमा मधून विमा संरक्षण दिलं जातं.)"
       },
       {
         "id": 7,
-        "title": "MARATHI DATA  Guidance for animal feed and availability of seeds"
+        "title": "पशु चारा मार्गदर्शन, बी बियाणांची उपलब्धता."
       },
       {
         "id": 8,
-        "title": "MARATHI DATA  Animal feed guidance and medicines available"
+        "title": "पशुखाद्य मार्गदर्शन आणि चिकित्सा उपलब्धता."
       },
       {
         "id": 9,
-        "title": "MARATHI DATA  Any other assistance for total healthy rearing"
+        "title": "पूर्णपणे निरोगी संगोपनासाठी जे आवश्यक इतर गोष्टी आहेत त्यासाठी मदत."
       },
       {
         "id": 10,
-        "title": "MARATHI DATA  Grants will be provided if and only if all the government rules and regulations are satisfied. Complete 5 years Guidance for planning a profitable financial project and increase a guaranteed income"
+        "title": "अनुदानासह (शासनाच्या नियमात बसत असेल तर ) अनुदान दिलं जाईल पुढील पाच वर्षे आर्थिक संयोजन नियोजना सह आर्थिक फायदेशीर उत्पन्ना साठी चि हमी,मदत व मार्गदर्शन दिलं जातं."
       },
       {
         "id": 11,
-        "title": "MARATHI DATA  Guidance and assistance for managing buying and selling of goats along with the marketing"
+        "title": "शेळीच्या विक्रीची व खरेदीची मार्केटिंग साठी सर्व मार्गदर्शन आणि खरेदीची व्यवस्था केली जाते."
       }
     ]
   }
