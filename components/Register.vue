@@ -7,6 +7,7 @@
   >
     <div class="form__wrapper">
       <v-form ref="form" v-model="valid" lazy-validation>
+        <h3 class="h5 mt-4">Personal Details:</h3>
         <v-text-field
           v-model="name"
           :counter="60"
