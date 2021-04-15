@@ -19,7 +19,7 @@
               backgroundImage: `url(${breed.img1})`,
               backgroundSize: `100% 100%;`,
             }"
-            @click="changeBg(1, idx)"
+            @mouseover="changeBg(1, idx)"
           ></div>
           <div
             ref="belowImg2"
@@ -28,7 +28,7 @@
               backgroundImage: `url(${breed.img2})`,
               backgroundSize: `100% 100%;`,
             }"
-            @click="changeBg(2, idx)"
+            @mouseover="changeBg(2, idx)"
           ></div>
           <div
             ref="belowImg3"
@@ -37,11 +37,11 @@
               backgroundImage: `url(${breed.img3})`,
               backgroundSize: `100% 100%;`,
             }"
-            @click="changeBg(3, idx)"
+            @mouseover="changeBg(3, idx)"
           ></div>
         </div>
       </div>
-      <div class="info__wrapper mt-16">
+      <div class="info__wrapper">
         <h2 class="info__title mb-4">{{ breed.title }}</h2>
         <v-row justify="space-between">
           <v-col cols="4">
@@ -68,7 +68,7 @@
             {{ breed.produceValue }}
           </v-col>
         </v-row>
-        <v-row justify="space-between">
+        <v-row v-if="breed.milkProduceValue" justify="space-between">
           <v-col cols="4">
             <b> {{ breed.milkProduce }}: </b>
           </v-col>
@@ -121,7 +121,11 @@ export default {
 .breed__grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  place-items: center;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
 }
 
 .breed__wrapper {
@@ -169,18 +173,23 @@ export default {
   object-fit: contain;
   border: 1px solid #212121;
 }
-
+.info__wrapper {
+  margin-top: 64px;
+}
 @media only screen and (max-width: 600px) {
   .breed__wrapper {
     gap: 16px;
   }
   .primary__img__container {
-    width: 200px;
-    height: 200px;
+    width: 320px;
+    height: 320px;
   }
   .secondary__img__container {
-    width: 200px;
-    height: 50px;
+    width: 320px;
+    height: 110px;
+  }
+  .info__wrapper {
+    margin-top: 120px;
   }
 }
 </style>
