@@ -207,7 +207,7 @@ export default {
   display: grid;
   place-items: center;
   height: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 1.2rem;
   position: relative;
 }
 .page__section {
@@ -236,6 +236,12 @@ export default {
     background-repeat: no-repeat;
     background-position: bottom;
     background-color: #fafafa;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact__grid__container {
+    margin-bottom: 2.1rem;
   }
 }
 </style>

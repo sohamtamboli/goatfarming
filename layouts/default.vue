@@ -179,18 +179,35 @@
               ><v-icon size="20px"> mdi-account </v-icon>Dr. Shivjatak pandurang
               <br
             /></v-card-text>
-            <v-card-text class="icon__contain"
-              ><v-icon size="20px"> mdi-cellphone </v-icon>
-              <span class="mobNumbers">
-                <Tooltip content="9130969688" />
+            <v-card-text class="icon__contain">
+              <span class="icon__contain">
+                <v-icon size="20px"> mdi-cellphone </v-icon>
                 <Tooltip content="7666639838" />
-                <Tooltip content="9325264343" />
+              </span>
+              <span class="mobNumbers">
+                <span class="icon__contain">
+                  <v-icon size="20px"> mdi-whatsapp </v-icon>
+                  <Tooltip content="9130969688" />
+                </span>
+                <span class="icon__contain">
+                  <v-icon size="20px"> mdi-whatsapp </v-icon>
+                  <Tooltip content="9325264343" />
+                </span>
               </span>
             </v-card-text>
             <v-card-text class="icon__contain"
               ><v-icon size="20px"> mdi-email </v-icon>
+              <Tooltip content="contact@anjalibusinessgroup.com" />
+            </v-card-text>
+            <v-card-text class="icon__contain mt-n4"
+              ><v-icon size="20px"> mdi-email </v-icon>
+              <Tooltip content="drpdshivajatak@gmail.com" />
+            </v-card-text>
+            <v-card-text class="icon__contain mt-n4"
+              ><v-icon size="20px"> mdi-email </v-icon>
               <Tooltip content="passplusagropltd@gmail.com" />
             </v-card-text>
+
             <v-card-text class="icon__contain">
               <v-icon size="20px"> mdi-map-marker </v-icon>
               A/P KANDE [R52-17], KANDE, SANGLI, Sangli, Maharashtra, India,
@@ -239,21 +256,6 @@ export default {
       }
       return true
     },
-    // isDesktop() {
-    //   if (process.browser) {
-    //     if (
-    //       /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    //         navigator.userAgent
-    //       )
-    //     ) {
-    //       return false
-    //     }
-
-    //     return true
-    //   }
-
-    //   return false
-    // },
   },
   watch: {
     group() {

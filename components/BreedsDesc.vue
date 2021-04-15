@@ -43,9 +43,39 @@
       </div>
       <div class="info__wrapper mt-16">
         <h2 class="info__title mb-4">{{ breed.title }}</h2>
-        <p class="info__para">
-          {{ breed.para }}
-        </p>
+        <v-row justify="space-between">
+          <v-col cols="4">
+            <b> {{ breed.origin }}: </b>
+          </v-col>
+          <v-col class="text-left" cols="8">
+            {{ breed.originValue }}
+          </v-col>
+        </v-row>
+        <v-row justify="space-between">
+          <v-col cols="4">
+            <b> {{ breed.specifications }}: </b>
+          </v-col>
+          <v-col class="text-left" cols="8">
+            <div>{{ breed.specificationsValueOne }}</div>
+            <div>{{ breed.specificationsValueTwo }}</div>
+          </v-col>
+        </v-row>
+        <v-row v-if="breed.produceValue" justify="space-between">
+          <v-col cols="4">
+            <b> {{ breed.produce }}: </b>
+          </v-col>
+          <v-col class="text-left" cols="8">
+            {{ breed.produceValue }}
+          </v-col>
+        </v-row>
+        <v-row justify="space-between">
+          <v-col cols="4">
+            <b> {{ breed.milkProduce }}: </b>
+          </v-col>
+          <v-col class="text-left" cols="8">
+            {{ breed.milkProduceValue }}
+          </v-col>
+        </v-row>
       </div>
     </div>
   </div>

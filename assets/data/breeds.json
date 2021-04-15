@@ -3,7 +3,15 @@
     {
       "id": 1,
       "title": "Osmanabadi",
-      "para": "This breed is mainly found in Maharashtra and also found in Western Maharashtra and adjoining parts of Andhra Pradesh.  The name of this breed is derived from its place of origin. Though it is reared for both milk and meat, it is popular for meat.  Most of the bucks are horned and does may not have horns. ",
+      "origin": "Origin",
+      "specifications": "Specifications",
+      "produce": "Produce",
+      "milkProduce": "Milk Produce",
+      "originValue": "Latur, Tuljapur, Udgir and Osmanabad, Maharashtra",
+      "produceValue": "",
+      "milkProduceValue": "0.5kg to 1.5kg per day",
+      "specificationsValueOne": "Weight of Male Goat: 34kg",
+      "specificationsValueTwo": "Weight of Female Goat: 32.3kg",
       "img1": "/goats/Osmanabadi/1.jpg",
       "img2": "/goats/Osmanabadi/2.jpg",
       "img3": "/goats/Osmanabadi/3.jpg"

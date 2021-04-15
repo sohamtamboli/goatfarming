@@ -118,7 +118,7 @@ export default {
 <style lang="scss" scoped>
 .breeds__container {
   min-height: auto;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 
   background-image: linear-gradient(
       rgba(255, 255, 255, 1),
