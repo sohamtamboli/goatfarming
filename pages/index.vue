@@ -181,7 +181,7 @@ export default {
   },
   data: () => ({
     videoSrc: undefined,
-    isDesktop: true,
+    isDesktop: false,
     impCardsData: imps,
     taglines: tagdata,
     mv: mvdata,
