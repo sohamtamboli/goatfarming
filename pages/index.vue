@@ -119,7 +119,7 @@
       <v-container>
         <Heading
           :title="
-            $store.state.language.language === `english` ? `Services` : `सेवा`
+            $store.state.language.language === `english` ? `Services` : `सुविधा`
           "
           dark
         />

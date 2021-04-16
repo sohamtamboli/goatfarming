@@ -6,7 +6,7 @@
           :title="
             $store.state.language.language === `english`
               ? `Anjali Business Group`
-              : `अंजली व्यवसाय ग्रुप`
+              : `अंजली उद्योग समूह`
           "
         />
         <v-img
