@@ -6,15 +6,18 @@
     </div>
     <v-switch
       v-model="switch1"
-      :label="label"
+      :label="
+        this.$store.state.language.language === `english`
+          ? `मराठी मध्ये पहा`
+          : `SEE IN ENGLISH`
+      "
       color="orange"
-      value="orange"
       dark
-      @change="check"
+      @change="switchLang"
     ></v-switch>
     <v-timeline dense dark>
       <v-timeline-item
-        v-for="service in servicesData"
+        v-for="service in getServiceData"
         :key="service.id"
         class="white--text mb-6"
         color="orange"
@@ -42,6 +45,20 @@ export default {
     servicesData: services.english,
     label: 'मराठी मध्ये पहा',
   }),
+  computed: {
+    getServiceData() {
+      if (this.$store.state.language.language === `english`) {
+        return services.english
+      }
+      return services.marathi
+    },
+    getLangBool() {
+      if (this.$store.state.language.language === `english`) {
+        return false
+      }
+      return true
+    },
+  },
   methods: {
     check() {
       if (this.switch1) {
@@ -52,6 +69,22 @@ export default {
         this.label = 'मराठी मध्ये पहा'
       }
     },
+    switchLang() {
+      if (this.$store.state.language.language === `english`) {
+        this.$store.commit('language/change', 'marathi')
+        localStorage.setItem('language', 'marathi')
+      } else {
+        this.$store.commit('language/change', 'english')
+        localStorage.setItem('language', 'english')
+      }
+    },
+  },
+  mounted() {
+    if (this.$store.state.language.language === `marathi`) {
+      this.switch1 = false
+    } else {
+      this.switch1 = true
+    }
   },
 }
 </script>
