@@ -267,7 +267,7 @@
               >{{
                 $store.state.language.language === `english`
                   ? `Dr. Shivjatak Pandurang`
-                  : `डॉ शिवजाटक पांडुरंग`
+                  : `डॉ. शिवजातक पांडुरंग`
               }}
               <br
             /></v-card-text>
