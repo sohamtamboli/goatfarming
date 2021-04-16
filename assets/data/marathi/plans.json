@@ -1,0 +1,90 @@
+{
+  "plansMara": {
+    "planDetails": [
+      {
+        "name": "अंजली योजना – १",
+        "img": "/card1.webp",
+        "selfInvest": "स्वयं गुंतवणूक",
+        "bankLoan": "बँक कर्ज",
+        "repay": "परतफेड करण्याची मुदत",
+        "approxGoatNo": "साधारण बकरी संख्या",
+        "approxYearIncome": "साधारण वार्षिक उत्पन्न",
+        "selfInvestValue": "25,000 ते 50,000 पर्यंत",
+        "bankLoanValue": "75,000 ते 1,50,000 पर्यंत",
+        "repayValue": "3 वर्ष",
+        "approxGoatNoValue": "5 ते 10 चा गट",
+        "approxYearIncomeValue": "1 लाख",
+        "aosType": "fade-up",
+        "aosTime": 8000,
+        "aosDelay": 100
+      },
+      {
+        "name": "अंजली योजना – 2",
+        "img": "/card2.webp",
+        "selfInvest": "स्वयं गुंतवणूक",
+        "bankLoan": "बँक कर्ज",
+        "repay": "परतफेड करण्याची मुदत",
+        "approxGoatNo": "साधारण बकरी संख्या",
+        "approxYearIncome": "साधारण वार्षिक उत्पन्न",
+        "selfInvestValue": "1 लाख",
+        "bankLoanValue": "3 लाख",
+        "repayValue": "3 वर्ष",
+        "approxGoatNoValue": "20 * 1 नर बकरी",
+        "approxYearIncomeValue": "2 लाख",
+        "aosType": "fade-up",
+        "aosTime": 6000,
+        "aosDelay": 200
+      },
+      {
+        "name": "अंजली योजना – 3",
+        "img": "/card3.webp",
+        "selfInvest": "स्वयं गुंतवणूक",
+        "bankLoan": "बँक कर्ज",
+        "repay": "परतफेड करण्याची मुदत",
+        "approxGoatNo": "साधारण बकरी संख्या",
+        "approxYearIncome": "साधारण वार्षिक उत्पन्न",
+        "selfInvestValue": "2 लाखांच्या पुढे",
+        "bankLoanValue": "3 *  स्वत: ची गुंतवणूक",
+        "repayValue": "5 वर्षे",
+        "approxGoatNoValue": "20 नर बकरींपेक्षा जास्त",
+        "approxYearIncomeValue": "पीसी शेळी खरेदी",
+        "tooltipText1": "3 *  स्वत: ची गुंतवणूक",
+        "tooltipText2": "दरडोई शेळी खरेदी",
+        "aosType": "fade-up",
+        "aosTime": 8000,
+        "aosDelay": 100
+      }
+    ],
+
+    "businessPlan": [
+      {
+        "name": "व्यवसाय योजना",
+        "selfInvest": "स्वयं गुंतवणूक",
+        "debt": "कर्ज",
+        "projectCost": "प्रकल्प किंमत",
+        "selfInvestValue": "25%",
+        "debtValue": "75%",
+        "projectCostValue": "100%",
+        "note": "टीपः धोरणानुसार उद्योग आधारित प्रशासन"
+      }
+    ],
+
+    "expenses": [
+      {
+        "name": "खर्च",
+        "construction": "बांधकाम",
+        "playingCapital": "भांडवल (वार्षिक)",
+        "buyGoat": "एक बकरी खरेदी करा",
+        "govTax": "सरकारी कर",
+        "companyFee": "कंपनी फी",
+        "agencyFee": "एजन्सी फी",
+        "constructionValue": "20%",
+        "playingCapitalValue": "20%",
+        "buyGoatValue": "50%",
+        "govTaxValue": "5%",
+        "companyFeeValue": "3%",
+        "agencyFeeValue": "2%"
+      }
+    ]
+  }
+}

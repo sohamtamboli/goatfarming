@@ -5,9 +5,9 @@ export const imps = [
     aosTime: 1000,
     aosDelay: 30,
 
-    name: 'Sale of born buck and female goat',
+    name: 'Breeding of young buck and goat',
     para:
-      'Good breed, birth line, ___ goats have 100% good bred and  selective (50-75%) amount ____ male goat can be given birth to and lot of profit can be earned.',
+      'Good breed, birth line, goats have 100% good bred and selective (50-75%) amount  male goat can be given birth to and lot of profit can be earned',
   },
   {
     id: 2,

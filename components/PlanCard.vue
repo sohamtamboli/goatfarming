@@ -2,7 +2,7 @@
   <!-- <div> -->
   <div class="plan__cards__container">
     <div
-      v-for="(plan, idx) in planData"
+      v-for="(plan, idx) in getPlanData"
       :key="idx"
       class="card__wrapper"
       :data-aos="plan.aosType"
@@ -73,7 +73,12 @@
           <v-expansion-panels flat accordion>
             <v-expansion-panel>
               <v-expansion-panel-header>
-                Explore <v-spacer />
+                {{
+                  $store.state.language.language === `english`
+                    ? `Explore`
+                    : `अन्वेषण`
+                }}
+                <v-spacer />
               </v-expansion-panel-header>
               <v-expansion-panel-content>
                 <div>
@@ -82,12 +87,16 @@
                     <v-expansion-panels multiple accordion>
                       <v-expansion-panel>
                         <v-expansion-panel-header
-                          >Business Plan<v-spacer
+                          >{{
+                            $store.state.language.language === `english`
+                              ? `Business Plan`
+                              : `व्यवसाय योजना`
+                          }}<v-spacer
                         /></v-expansion-panel-header>
                         <v-expansion-panel-content>
                           <v-row>
                             <v-col
-                              v-for="(item, i) in businessData"
+                              v-for="(item, i) in getBuisnessData"
                               :key="i"
                               cols="12"
                             >
@@ -134,12 +143,16 @@
                       </v-expansion-panel>
                       <v-expansion-panel>
                         <v-expansion-panel-header
-                          >Expenses<v-spacer
+                          >{{
+                            $store.state.language.language === `english`
+                              ? `Expenses`
+                              : `खर्च`
+                          }}<v-spacer
                         /></v-expansion-panel-header>
                         <v-expansion-panel-content>
                           <v-row>
                             <v-col
-                              v-for="(item, i) in expensesData"
+                              v-for="(item, i) in getExpenseData"
                               :key="i"
                               cols="12"
                             >
@@ -224,6 +237,8 @@
 
 <script>
 import { plans } from '@/assets/data/plans.json'
+import { plansMara } from '@/assets/data/marathi/plans.json'
+
 export default {
   data: () => ({
     planData: plans.planDetails,
@@ -233,6 +248,26 @@ export default {
     show: {},
     shows: true,
   }),
+  computed: {
+    getPlanData() {
+      if (this.$store.state.language.language === `english`) {
+        return plans.planDetails
+      }
+      return plansMara.planDetails
+    },
+    getBuisnessData() {
+      if (this.$store.state.language.language === `english`) {
+        return plans.businessPlan
+      }
+      return plansMara.businessPlan
+    },
+    getExpenseData() {
+      if (this.$store.state.language.language === `english`) {
+        return plans.expenses
+      }
+      return plansMara.expenses
+    },
+  },
   mounted() {
     if (screen.width <= 768) {
       this.dynoWidth = 380

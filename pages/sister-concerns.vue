@@ -2,7 +2,13 @@
   <div class="page__wrapper">
     <section class="page__section">
       <v-container>
-        <Heading title="Anjali Business Group" />
+        <Heading
+          :title="
+            $store.state.language.language === `english`
+              ? `Anjali Business Group`
+              : `अंजली व्यवसाय ग्रुप`
+          "
+        />
         <v-img
           src="/anjali.webp"
           width="50%"
@@ -11,7 +17,15 @@
           class="logo__img"
         >
         </v-img>
-        <Heading title="Our Sister Concerns" small class="mt-16 pt-16" />
+        <Heading
+          :title="
+            $store.state.language.language === `english`
+              ? `Our Sister Concerns`
+              : `आमच्या सहयोगी कंपन्या`
+          "
+          small
+          class="mt-16 pt-16"
+        />
         <Importance :treedata="companyCardsData" class="card__grid" />
       </v-container>
     </section>
@@ -24,13 +38,19 @@
 <script>
 import Importance from '@/components/Importance'
 import { companies } from '@/assets/data/companyTree.js'
+import { companiesM } from '@/assets/data/marathi/companyTree.js'
 export default {
   components: {
     Importance,
   },
-  data: () => ({
-    companyCardsData: companies,
-  }),
+  computed: {
+    companyCardsData() {
+      if (this.$store.state.language.language === `english`) {
+        return companies
+      }
+      return companiesM
+    },
+  },
   head() {
     return {
       title: 'Sister Companies - Anjali Goatfarms',
