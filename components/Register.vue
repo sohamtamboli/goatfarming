@@ -406,7 +406,7 @@ export default {
         this.$refs.form.reset()
       }
     },
-    submitForm() {
+    async submitForm() {
       const payload = {
         name: this.name,
         mobile: this.mobile,
@@ -429,10 +429,10 @@ export default {
       }
       try {
         // eslint-disable-next-line no-unused-vars
-        // const resp = await this.$axios.$post(
-        //   `https://goatfarming-backend.herokuapp.com/api/contact/`,
-        //   payload
-        // )
+        const resp = await this.$axios.$post(
+          `https://goatfarming-backend.herokuapp.com/api/register/`,
+          payload
+        )
         // eslint-disable-next-line no-console
         console.log(JSON.stringify(payload, null, 2))
         this.$nuxt.$emit('showSuccessSnackbar')
