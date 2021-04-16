@@ -76,7 +76,7 @@
                 {{
                   $store.state.language.language === `english`
                     ? `Explore`
-                    : `अन्वेषण`
+                    : `अधिक जाणून घ्या`
                 }}
                 <v-spacer />
               </v-expansion-panel-header>

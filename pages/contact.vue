@@ -2,7 +2,14 @@
   <div class="page__wrapper">
     <v-container class="contact__grid__container">
       <!-- <h1 class="text-center mt-4 mb-6">Contact Us</h1> -->
-      <Heading title="Registration" class="mt-4" />
+      <Heading
+        :title="
+          $store.state.language.language === `english`
+            ? `Registration`
+            : `नोंदणी`
+        "
+        class="mt-4"
+      />
       <Register />
       <v-card elevation="8" class="mt-4">
         <v-card-title> Terms and Conditions: </v-card-title>
