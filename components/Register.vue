@@ -63,7 +63,7 @@
                 $store.state.language.language === `english`
                   ? `Do you have land area? :
 `
-                  : `आपल्याकडे जमीन क्षेत्र आहे? :`
+                  : `आपल्याकडे शेत जमीन आहे का? :`
               }}
             </div>
           </template>
@@ -158,7 +158,7 @@
                   ? `Have you ever attended the government training session on goat
               farming? :
 `
-                  : `तुम्ही कधी बकरी शेतीवरील शासकीय प्रशिक्षण सत्रात भाग घेतला आहे का?`
+                  : `तुम्ही कधी शेळी पालनासाठी शासकीय प्रशिक्षण घेतलं आहे का?`
               }}
             </div>
           </template>
@@ -193,7 +193,7 @@
                 $store.state.language.language === `english`
                   ? `Do you have Shed area? : 
 `
-                  : `आपल्याकडे शेड क्षेत्र आहे?`
+                  : `आपल्याकडे शेड आहे का?`
               }}
             </div>
           </template>
