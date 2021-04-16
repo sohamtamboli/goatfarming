@@ -10,22 +10,38 @@
         </div>
         <!-- <v-spacer></v-spacer> -->
         <div v-if="isDesktop" class="right__menu">
-          <nuxt-link v-show="routeCheck" class="menu__links" to="/"
-            >Home</nuxt-link
+          <nuxt-link v-show="routeCheck" class="menu__links" to="/">{{
+            $store.state.language.language === `english` ? `Home` : `मुख्यपृष्ठ`
+          }}</nuxt-link>
+          <nuxt-link class="menu__links" to="/about">{{
+            $store.state.language.language === `english`
+              ? `About`
+              : `आमच्या बद्दल`
+          }}</nuxt-link>
+          <nuxt-link
+            class="menu__links"
+            :to="{ path: '/', hash: '#services' }"
+            >{{
+              $store.state.language.language === `english` ? `Services` : `सेवा`
+            }}</nuxt-link
           >
-          <nuxt-link class="menu__links" to="/about">About</nuxt-link>
-          <nuxt-link class="menu__links" :to="{ path: '/', hash: '#services' }"
-            >Services</nuxt-link
-          >
-          <nuxt-link class="menu__links" :to="{ path: '/', hash: '#plans' }"
-            >Plans</nuxt-link
-          >
+          <nuxt-link class="menu__links" :to="{ path: '/', hash: '#plans' }">{{
+            $store.state.language.language === `english` ? `Plans` : `योजना`
+          }}</nuxt-link>
 
-          <nuxt-link class="menu__links" to="/breeds">Breeds</nuxt-link>
-          <nuxt-link class="menu__links" to="/sister-concerns"
-            >Sister Concerns</nuxt-link
-          >
-          <nuxt-link class="menu__links" to="/contact">Register</nuxt-link>
+          <nuxt-link class="menu__links" to="/breeds">{{
+            $store.state.language.language === `english` ? `Breeds` : `जाती`
+          }}</nuxt-link>
+          <nuxt-link class="menu__links" to="/sister-concerns">{{
+            $store.state.language.language === `english`
+              ? `Sister Concerns`
+              : `सहयोगी कंपन्या`
+          }}</nuxt-link>
+          <nuxt-link class="menu__links" to="/contact">{{
+            $store.state.language.language === `english`
+              ? `Register`
+              : `नोंदणी करा`
+          }}</nuxt-link>
         </div>
       </div>
     </v-app-bar>
@@ -60,17 +76,21 @@
         <v-list-item-group v-model="group">
           <v-list-item v-show="routeCheck">
             <v-list-item-title
-              ><nuxt-link to="/" class="bottom__links"
-                >Home</nuxt-link
-              ></v-list-item-title
+              ><nuxt-link to="/" class="bottom__links">{{
+                $store.state.language.language === `english`
+                  ? `Home`
+                  : `मुख्यपृष्ठ`
+              }}</nuxt-link></v-list-item-title
             >
           </v-list-item>
 
           <v-list-item>
             <v-list-item-title
-              ><nuxt-link to="/about" class="bottom__links"
-                >About</nuxt-link
-              ></v-list-item-title
+              ><nuxt-link to="/about" class="bottom__links">{{
+                $store.state.language.language === `english`
+                  ? `About`
+                  : `आमच्या बद्दल`
+              }}</nuxt-link></v-list-item-title
             >
           </v-list-item>
           <v-list-item>
@@ -78,7 +98,11 @@
               ><nuxt-link
                 class="bottom__links"
                 :to="{ path: '/', hash: '#services' }"
-                >Services</nuxt-link
+                >{{
+                  $store.state.language.language === `english`
+                    ? `Services`
+                    : `सेवा`
+                }}</nuxt-link
               ></v-list-item-title
             >
           </v-list-item>
@@ -88,30 +112,38 @@
               ><nuxt-link
                 class="bottom__links"
                 :to="{ path: '/', hash: '#plans' }"
-                >Plans</nuxt-link
+                >{{
+                  $store.state.language.language === `english`
+                    ? `Plans`
+                    : `योजना`
+                }}</nuxt-link
               ></v-list-item-title
             >
           </v-list-item>
 
           <v-list-item>
             <v-list-item-title
-              ><nuxt-link class="bottom__links" to="/breeds"
-                >Breeds</nuxt-link
-              ></v-list-item-title
+              ><nuxt-link class="bottom__links" to="/breeds">{{
+                $store.state.language.language === `english` ? `Breeds` : `जाती`
+              }}</nuxt-link></v-list-item-title
             >
           </v-list-item>
           <v-list-item>
             <v-list-item-title
-              ><nuxt-link class="bottom__links" to="/sister-concerns"
-                >Sister Concerns</nuxt-link
-              ></v-list-item-title
+              ><nuxt-link class="bottom__links" to="/sister-concerns">{{
+                $store.state.language.language === `english`
+                  ? `Sister Concerns`
+                  : `सहयोगी कंपन्या`
+              }}</nuxt-link></v-list-item-title
             >
           </v-list-item>
           <v-list-item>
             <v-list-item-title
-              ><nuxt-link class="bottom__links" to="/contact"
-                >Register</nuxt-link
-              ></v-list-item-title
+              ><nuxt-link class="bottom__links" to="/contact">{{
+                $store.state.language.language === `english`
+                  ? `Register`
+                  : `नोंदणी करा`
+              }}</nuxt-link></v-list-item-title
             >
           </v-list-item>
         </v-list-item-group>
@@ -165,7 +197,7 @@
                     {{
                       $store.state.language.language === `english`
                         ? `About`
-                        : `बद्दल`
+                        : `आमच्या बद्दल`
                     }}</nuxt-link
                   >
                 </h4>
