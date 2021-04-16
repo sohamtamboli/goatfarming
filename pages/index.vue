@@ -18,7 +18,7 @@
           <div class="word__wrapper mt-n8">
             <v-container v-if="isDesktop" class="tagline__container">
               <v-card
-                v-for="tagline in taglines"
+                v-for="tagline in getTagData"
                 :key="tagline.id"
                 class="tagline__card black--text"
               >
@@ -60,7 +60,7 @@
         />
         <v-container class="tagline__container">
           <v-card
-            v-for="tagline in taglines"
+            v-for="tagline in getTagData"
             :key="tagline.id"
             class="tagline__card black--text"
           >
@@ -167,6 +167,7 @@ import Heading from '@/components/Heading'
 import { imps } from '@/assets/data/impTree.js'
 import { impsM } from '@/assets/data/marathi/impTree'
 import { tagdata } from '@/assets/data/tagline.json'
+import { tagdataMah } from '@/assets/data/marathi/tagline.json'
 import { mvdata } from '@/assets/data/missionvision.json'
 import { mvDataMar } from '@/assets/data/marathi/missionvision.json'
 
@@ -198,6 +199,12 @@ export default {
         return mvdata
       }
       return mvDataMar
+    },
+    getTagData() {
+      if (this.$store.state.language.language === `english`) {
+        return tagdata
+      }
+      return tagdataMah
     },
   },
   mounted() {

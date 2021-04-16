@@ -125,9 +125,11 @@
     <v-footer dark app absolute class="footer__container">
       <v-container>
         <v-card flat class="grid__wrapper">
-          <v-card-title class="header1"
-            >Connect with Us on Social Media</v-card-title
-          >
+          <v-card-title class="header1">{{
+            $store.state.language.language === `english`
+              ? `Connect with Us on Social Media`
+              : `सोशल मीडियावर आमच्याशी संपर्क साधा`
+          }}</v-card-title>
           <v-card-text class="content1">
             <v-btn v-for="icon in icons" :key="icon.link" icon>
               <a :href="icon.link" target="_blank" class="social__icons">
@@ -137,15 +139,35 @@
               </a>
             </v-btn>
           </v-card-text>
-          <v-card-title class="header2">Quick Links</v-card-title>
+          <v-card-title class="header2">
+            {{
+              $store.state.language.language === `english`
+                ? `Quick Links`
+                : `क्विक लिंक`
+            }}</v-card-title
+          >
           <v-card-text class="content2">
             <ul class="quick__links__list">
               <li>
-                <h4><nuxt-link to="/" class="quick__links">Home</nuxt-link></h4>
+                <h4>
+                  <nuxt-link to="/" class="quick__links">
+                    {{
+                      $store.state.language.language === `english`
+                        ? `Home`
+                        : `मुख्यपृष्ठ`
+                    }}
+                  </nuxt-link>
+                </h4>
               </li>
               <li>
                 <h4>
-                  <nuxt-link to="/about" class="quick__links">About</nuxt-link>
+                  <nuxt-link to="/about" class="quick__links">
+                    {{
+                      $store.state.language.language === `english`
+                        ? `About`
+                        : `बद्दल`
+                    }}</nuxt-link
+                  >
                 </h4>
               </li>
               <li>
@@ -153,30 +175,54 @@
                   <nuxt-link
                     :to="{ path: '/', hash: '#services' }"
                     class="quick__links"
-                    >Services</nuxt-link
+                  >
+                    {{
+                      $store.state.language.language === `english`
+                        ? `Services`
+                        : `सेवा`
+                    }}
+                  </nuxt-link>
+                </h4>
+              </li>
+              <li>
+                <h4>
+                  <nuxt-link to="/sister-concerns" class="quick__links">
+                    {{
+                      $store.state.language.language === `english`
+                        ? `Sister Concerns`
+                        : `सहयोगी कंपन्या`
+                    }}</nuxt-link
                   >
                 </h4>
               </li>
               <li>
                 <h4>
-                  <nuxt-link to="/sister-concerns" class="quick__links"
-                    >Sister Concerns</nuxt-link
-                  >
-                </h4>
-              </li>
-              <li>
-                <h4>
-                  <nuxt-link to="/contact" class="quick__links"
-                    >Register</nuxt-link
-                  >
+                  <nuxt-link to="/contact" class="quick__links">
+                    {{
+                      $store.state.language.language === `english`
+                        ? `Register`
+                        : `नोंदणी करा`
+                    }}
+                  </nuxt-link>
                 </h4>
               </li>
             </ul>
           </v-card-text>
-          <v-card-title class="header3">Address/Phone</v-card-title>
+          <v-card-title class="header3">
+            {{
+              $store.state.language.language === `english`
+                ? `Address/Phone`
+                : `पत्ता / फोन`
+            }}</v-card-title
+          >
           <div class="content3">
             <v-card-text class="icon__contain"
-              ><v-icon size="20px"> mdi-account </v-icon>Dr. Shivjatak pandurang
+              ><v-icon size="20px"> mdi-account </v-icon
+              >{{
+                $store.state.language.language === `english`
+                  ? `Dr. Shivjatak Pandurang`
+                  : `डॉ शिवजाटक पांडुरंग`
+              }}
               <br
             /></v-card-text>
             <v-card-text class="icon__contain">
