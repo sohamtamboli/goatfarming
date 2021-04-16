@@ -12,7 +12,13 @@
       />
       <Register />
       <v-card elevation="8" class="mt-4">
-        <v-card-title> Terms and Conditions: </v-card-title>
+        <v-card-title>
+          {{
+            $store.state.language.language === `english`
+              ? `Terms and Conditions:`
+              : `नियम आणि अटी:`
+          }}
+        </v-card-title>
         <v-card-text>
           <ol v-if="$store.state.language.language === `english`">
             <li>Free First Registration.</li>

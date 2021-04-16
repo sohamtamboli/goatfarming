@@ -242,7 +242,13 @@
           "
           required
         />
-        <h3 class="h5 mt-4">Bank Details:</h3>
+        <h3 class="h5 mt-4">
+          {{
+            $store.state.language.language === `english`
+              ? `Bank Details:`
+              : `बँकेचा तपशील:`
+          }}
+        </h3>
         <v-text-field
           v-model="beneficiary"
           :rules="beneficiaryRules"
