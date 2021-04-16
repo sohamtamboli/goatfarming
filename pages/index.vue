@@ -146,10 +146,10 @@
         </v-btn> -->
         <div class="py-3">Language/भाषा</div>
         <div class="py-3">
-          <v-btn color="primary" @click="selectLang(`english`)" depressed
+          <v-btn color="primary" depressed @click="selectLang(`english`)"
             >English</v-btn
           >
-          <v-btn color="primary" @click="selectLang(`marathi`)" depressed
+          <v-btn color="primary" depressed @click="selectLang(`marathi`)"
             >मराठी
           </v-btn>
         </div>
