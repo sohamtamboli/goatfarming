@@ -1,7 +1,5 @@
 export const state = () => ({
-  language: process.server
-    ? undefined
-    : localStorage.getItem('language') || 'english',
+  language: undefined,
 })
 
 export const mutations = {

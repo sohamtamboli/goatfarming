@@ -31,8 +31,18 @@
               </v-card>
             </v-container>
             <div v-else>
-              Build <i>your</i> Goat Farms <br />
-              <i>with</i> Anjali Goat Farming
+              <template v-if="$store.state.language.language === `english`">
+                <div>
+                  Build <i>your</i> Goat Farms <br />
+                  <i>with</i> Anjali Goat Farming
+                </div>
+              </template>
+              <template v-else>
+                <div>
+                  अंजली शेळी पालनसह <br />
+                  आपले शेळी फार्म तयार करा
+                </div>
+              </template>
             </div>
           </div>
           <nuxt-link

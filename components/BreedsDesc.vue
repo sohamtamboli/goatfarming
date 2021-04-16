@@ -131,7 +131,6 @@ export default {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
-  place-items: center;
   @media only screen and (max-width: 600px) {
     grid-template-columns: repeat(1, minmax(300px, 1fr));
   }

@@ -152,6 +152,20 @@
 
     <v-main id="#app">
       <nuxt />
+      <v-fab-transition>
+        <v-btn
+          color="#ff4848"
+          elevation="2"
+          fab
+          fixed
+          bottom
+          right
+          class="white--text"
+          @click="switchLang"
+        >
+          <v-icon>mdi-google-translate</v-icon>
+        </v-btn>
+      </v-fab-transition>
     </v-main>
 
     <v-footer dark app absolute class="footer__container">
@@ -344,6 +358,15 @@ export default {
     this.isDesktop = !this.isMobile()
   },
   methods: {
+    switchLang() {
+      if (this.$store.state.language.language === `english`) {
+        this.$store.commit('language/change', 'marathi')
+        localStorage.setItem('language', 'marathi')
+      } else {
+        this.$store.commit('language/change', 'english')
+        localStorage.setItem('language', 'english')
+      }
+    },
     isMobile() {
       let check = false
       ;(function (a) {
