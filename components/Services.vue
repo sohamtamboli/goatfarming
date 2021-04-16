@@ -1,8 +1,13 @@
 <template>
   <v-container>
     <div class="h5 font-weight-medium white--text mb-16">
-      Only International Indian company to provide all the necessary services
-      for goat Rearing under single roof with experience of more than 12 years
+      {{
+        this.$store.state.language.language === `english`
+          ? `Only International Indian company to provide all the necessary services
+      for goat Rearing under single roof with experience of more than 12 years`
+          : `
+केवळ एका आंतरराष्ट्रीय छताखाली शेळी पालन-पोषण करण्यासाठी सर्व आवश्यक सेवा पुरविणारी फक्त आंतरराष्ट्रीय भारतीय कंपनी आहे, ज्याचा अनुभव १२ वर्षांहून अधिक आहे`
+      }}
     </div>
     <v-switch
       v-model="switch1"
