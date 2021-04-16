@@ -1,7 +1,7 @@
 <template>
   <div class="breed__grid">
     <div
-      v-for="(breed, idx) in breedData"
+      v-for="(breed, idx) in getBreedData"
       :key="breed.id"
       class="breed__wrapper"
     >
@@ -83,6 +83,7 @@
 
 <script>
 import { breeds } from '@/assets/data/breeds.json'
+import { breedsMar } from '@/assets/data/marathi/breeds.json'
 export default {
   data: () => ({
     breedData: breeds,
@@ -91,6 +92,14 @@ export default {
     thumb3: breeds.img3,
     background: '',
   }),
+  computed: {
+    getBreedData() {
+      if (this.$store.state.language.language === `english`) {
+        return breeds
+      }
+      return breedsMar
+    },
+  },
   mounted() {
     // eslint-disable-next-line no-console
     console.log(this.$refs.belowImg1[0].style)

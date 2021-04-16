@@ -6,7 +6,15 @@
           <source v-if="videoSrc" :src="videoSrc" type="video/mp4" />
         </video>
         <div class="content__wrapper">
-          <Heading v-show="isDesktop" title="We Provide" dark />
+          <Heading
+            v-show="isDesktop"
+            :title="
+              $store.state.language.language === `english`
+                ? `We Provide`
+                : `आम्ही पुरवतो`
+            "
+            dark
+          />
           <div class="word__wrapper mt-n8">
             <v-container v-if="isDesktop" class="tagline__container">
               <v-card
@@ -34,14 +42,22 @@
             data-aos-duration="1000"
             data-aos-delay="1"
             data-aos-easing="ease-out-back"
-            >Enquire</nuxt-link
+            >{{
+              $store.state.language.language === `english` ? 'Enquire' : 'चौकशी'
+            }}</nuxt-link
           >
         </div>
       </div>
     </section>
     <section v-show="!isDesktop" class="page__section">
       <v-container v-if="!isDesktop">
-        <Heading title="We Provide" />
+        <Heading
+          :title="
+            $store.state.language.language === `english`
+              ? `We Provide`
+              : `आम्ही पुरवतो`
+          "
+        />
         <v-container class="tagline__container">
           <v-card
             v-for="tagline in taglines"
@@ -60,9 +76,15 @@
     </section>
     <section class="page__section">
       <v-container>
-        <Heading title="Mission And Vision" />
+        <Heading
+          :title="
+            $store.state.language.language === `english`
+              ? `Mission And Vision`
+              : `मिशन आणि व्हिजन`
+          "
+        />
         <v-container class="mv__container">
-          <v-card v-for="n in mv" :key="n.id" elevation="0">
+          <v-card v-for="n in getMvData" :key="n.id" elevation="0">
             <v-card-title class="justify-center">{{ n.title }}</v-card-title>
             <v-card-text class="text-center">
               {{ n.para }}
@@ -73,13 +95,24 @@
     </section>
     <section class="page__section">
       <v-container>
-        <Heading title="Importance" />
-        <Importance :treedata="impCardsData" class="card__grid" />
+        <Heading
+          :title="
+            $store.state.language.language === `english`
+              ? `Importance`
+              : `महत्त्व`
+          "
+        />
+        <Importance :treedata="getCardsData" class="card__grid" />
       </v-container>
     </section>
     <section id="services" class="carousel__wrapper page__section">
       <v-container>
-        <Heading title="Services" dark />
+        <Heading
+          :title="
+            $store.state.language.language === `english` ? `Services` : `सेवा`
+          "
+          dark
+        />
         <Services />
         <!-- <Breeds
           data-aos="zoom-in"
@@ -90,13 +123,38 @@
     </section>
     <section id="plans" class="page__section">
       <v-container>
-        <Heading title="Plans" />
+        <Heading
+          :title="
+            $store.state.language.language === `english` ? `Plans` : `योजना`
+          "
+        />
         <PlanCard />
       </v-container>
     </section>
     <section class="page__section">
       <div class="spacer" />
     </section>
+    <v-bottom-sheet v-model="langSelector" persistent>
+      <v-sheet class="text-center" height="200px">
+        <!-- <v-btn
+          class="mt-6"
+          text
+          color="error"
+          @click="langSelector = !langSelector"
+        >
+          close
+        </v-btn> -->
+        <div class="py-3">Language/भाषा</div>
+        <div class="py-3">
+          <v-btn color="primary" @click="selectLang(`english`)" depressed
+            >English</v-btn
+          >
+          <v-btn color="primary" @click="selectLang(`marathi`)" depressed
+            >मराठी
+          </v-btn>
+        </div>
+      </v-sheet>
+    </v-bottom-sheet>
   </div>
 </template>
 
@@ -107,8 +165,10 @@ import PlanCard from '@/components/PlanCard'
 import Importance from '@/components/Importance'
 import Heading from '@/components/Heading'
 import { imps } from '@/assets/data/impTree.js'
+import { impsM } from '@/assets/data/marathi/impTree'
 import { tagdata } from '@/assets/data/tagline.json'
 import { mvdata } from '@/assets/data/missionvision.json'
+import { mvDataMar } from '@/assets/data/marathi/missionvision.json'
 
 export default {
   components: {
@@ -124,8 +184,22 @@ export default {
     impCardsData: imps,
     taglines: tagdata,
     mv: mvdata,
+    langSelector: false,
   }),
-
+  computed: {
+    getCardsData() {
+      if (this.$store.state.language.language === `english`) {
+        return imps
+      }
+      return impsM
+    },
+    getMvData() {
+      if (this.$store.state.language.language === `english`) {
+        return mvdata
+      }
+      return mvDataMar
+    },
+  },
   mounted() {
     if (this.isMobile()) {
       this.videoSrc = '/vidMobile.mp4'
@@ -135,6 +209,11 @@ export default {
       this.videoSrc = '/vidDesktop.mp4'
       this.isDesktop = true
       // debugger
+    }
+    if (localStorage.getItem('language')) {
+      this.$store.commit('language/change', localStorage.getItem('language'))
+    } else {
+      this.langSelector = true
     }
   },
 
@@ -154,6 +233,11 @@ export default {
           check = true
       })(navigator.userAgent || navigator.vendor || window.opera)
       return check
+    },
+    selectLang(language) {
+      this.$store.commit('language/change', language)
+      localStorage.setItem('language', language)
+      this.langSelector = false
     },
   },
   head() {

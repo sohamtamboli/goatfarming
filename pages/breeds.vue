@@ -1,6 +1,9 @@
 <template>
   <div class="breeds__container">
-    <Heading title="Breeds" class="mt-10" />
+    <Heading
+      :title="$store.state.language.language === `english` ? `Breeds` : `जाती`"
+      class="mt-10"
+    />
     <v-container>
       <BreedsDesc />
     </v-container>
